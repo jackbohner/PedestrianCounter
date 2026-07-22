@@ -7,6 +7,8 @@
 # 1 "/Applications/microchip/xc8/v3.10/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
+# 1 "./mcc_generated_files/system/system.h" 1
+# 38 "./mcc_generated_files/system/system.h"
 # 1 "/Applications/microchip/xc8/v3.10/pic/include/xc.h" 1 3
 # 18 "/Applications/microchip/xc8/v3.10/pic/include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -26871,165 +26873,10 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "/Applications/microchip/xc8/v3.10/pic/include/xc.h" 2 3
-# 2 "main.c" 2
-# 1 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h" 1 3
-# 24 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h" 3
-# 1 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 1 3
-# 12 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 143 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 3
-typedef __int24 ssize_t;
-# 255 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 3
-typedef long long off_t;
-# 409 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h" 2 3
-# 52 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-
-
-
-
-
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-
-
-
-
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 3 "main.c" 2
+# 39 "./mcc_generated_files/system/system.h" 2
 
 # 1 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdbool.h" 1 3
-# 5 "main.c" 2
-# 1 "./mcc_generated_files/system/system.h" 1
-# 41 "./mcc_generated_files/system/system.h"
+# 41 "./mcc_generated_files/system/system.h" 2
 # 1 "./mcc_generated_files/system/config_bits.h" 1
 # 39 "./mcc_generated_files/system/config_bits.h"
 # 1 "./mcc_generated_files/system/../system/clock.h" 1
@@ -27500,7 +27347,162 @@ void I2C1_Tasks(void);
 
 
 void SYSTEM_Initialize(void);
-# 6 "main.c" 2
+# 2 "main.c" 2
+
+# 1 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h" 1 3
+# 24 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h" 3
+# 1 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 1 3
+# 12 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "/Applications/microchip/xc8/v3.10/pic/include/c99/bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h" 2 3
+# 52 "/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 4 "main.c" 2
+
 # 1 "./functions.h" 1
 # 10 "./functions.h"
 extern volatile _Bool rtcWake;
@@ -27553,20 +27555,62 @@ void ADC_Init(void);
 uint16_t ADC_Read(void);
 
 void Timer0_Init(void);
-# 7 "main.c" 2
+# 6 "main.c" 2
+
+
+
+volatile uint8_t LoRaState = 0;
+volatile uint8_t LoRaSeconds = 0;
+volatile uint8_t SendMessage = 0;
 
 
 
 
-void __attribute__((picinterrupt(("irq(IOC), base(8)")))) IOC_ISR(void)
+
+void __attribute__((picinterrupt(("irq(default), base(8)")))) ISR(void)
 {
+    if(PIR3bits.TMR0IF)
+    {
+        PIR3bits.TMR0IF = 0;
+
+        TMR0H = 0xFC;
+        TMR0L = 0x00;
+
+        LoRaSeconds++;
+
+    }
+
     if(PIR0bits.IOCIF)
     {
-        if(IOCBFbits.IOCBF3) { IOCBFbits.IOCBF3 = 0; A_flag = 1; }
-        if(IOCBFbits.IOCBF4) { IOCBFbits.IOCBF4 = 0; B_flag = 1; }
-        if(IOCBFbits.IOCBF5) { IOCBFbits.IOCBF5 = 0; C_flag = 1; }
-        if(IOCBFbits.IOCBF6) { IOCBFbits.IOCBF6 = 0; D_flag = 1; }
-        if(IOCBFbits.IOCBF7) { IOCBFbits.IOCBF7 = 0; E_flag = 1; }
+        if(IOCBFbits.IOCBF3)
+        {
+            IOCBFbits.IOCBF3 = 0;
+            A_flag = 1;
+        }
+
+        if(IOCBFbits.IOCBF4)
+        {
+            IOCBFbits.IOCBF4 = 0;
+            B_flag = 1;
+        }
+
+        if(IOCBFbits.IOCBF5)
+        {
+            IOCBFbits.IOCBF5 = 0;
+            C_flag = 1;
+        }
+
+        if(IOCBFbits.IOCBF6)
+        {
+            IOCBFbits.IOCBF6 = 0;
+            D_flag = 1;
+        }
+
+        if(IOCBFbits.IOCBF7)
+        {
+            IOCBFbits.IOCBF7 = 0;
+            E_flag = 1;
+        }
 
         if(IOCCFbits.IOCCF5)
         {
@@ -27578,30 +27622,35 @@ void __attribute__((picinterrupt(("irq(IOC), base(8)")))) IOC_ISR(void)
     }
 }
 
+
+
+
+
 int main(void)
 {
     int count = 0;
     int toggle = 0;
     int IRWasHigh = 0;
     int PIR_Reset = 0;
+
     uint8_t state = 0;
+
     char buffer[64];
-    uint16_t adc;
+
+    uint16_t adc = 0;
 
     uint8_t sleepHour = 21;
-    uint8_t sleepMinute = 1;
+    uint8_t sleepMinute = 0;
 
     uint8_t wakeHour = 7;
     uint8_t wakeMinute = 0;
 
     uint8_t prevsec = 255;
 
-    VREGCONbits.VREGPM = 1;
-
     SYSTEM_Initialize();
     ADC_Init();
 
-    RTC_SetTime(12, 5, 1);
+    VREGCONbits.VREGPM = 1;
 
     ANSELA = 0;
     ANSELB = 0;
@@ -27613,11 +27662,18 @@ int main(void)
 
     ANSELDbits.ANSELD2 = 0;
     ANSELDbits.ANSELD3 = 0;
+
     TRISAbits.TRISA0 = 0;
     LATAbits.LATA0 = 0;
 
+    LATDbits.LATD2 = 1;
     LATDbits.LATD3 = 1;
 
+    LoRaState = 0;
+    LoRaSeconds = 0;
+    SendMessage = 0;
+
+    Timer0_Init();
     buttonInit();
 
     Init_RTC_Interrupt_RC5();
@@ -27626,19 +27682,15 @@ int main(void)
 
     (INTCON0bits.GIE = 1);
 
-
     while(1)
     {
 
         RTC_UpdateTime();
 
-        if (prevsec != sec)
-        {
+        if(prevsec != sec){
             prevsec = sec;
             printf("Time: %02u:%02u:%02u\r\n", hour, min, sec);
-            printf("%2u\r\n", adc);
         }
-
 
         if(
             (hour > sleepHour || (hour == sleepHour && min >= sleepMinute))
@@ -27646,13 +27698,66 @@ int main(void)
             (hour < wakeHour || (hour == wakeHour && min < wakeMinute))
         )
         {
-            LATDbits.LATD3 = 0;
-            printf("Sleeping...\r\n");
-            while(!UART2_IsTxDone());
 
-            RTC_SleepUntil(wakeHour, wakeMinute, 0);
-            LATDbits.LATD3 = 1;
+
+
+        if(LoRaState == 0)
+        {
+            if(LoRaSeconds >= 5)
+            {
+                SendMessage = 1;
+
+                LoRaSeconds = 0;
+
+                LoRaState = 1;
+            }
         }
+
+        if(LoRaState == 1)
+        {
+            if(LoRaSeconds >= 20)
+            {
+                LATDbits.LATD2 = 0;
+
+                LoRaSeconds = 0;
+
+                LoRaState = 2;
+            }
+        }
+
+        if(LoRaState == 2)
+        {
+            if(LoRaSeconds >= 20)
+            {
+                LATDbits.LATD2 = 1;
+
+                LoRaSeconds = 0;
+
+                LoRaState = 0;
+            }
+        }
+
+        if(SendMessage)
+        {
+            SendMessage = 0;
+
+            sprintf(
+                buffer,
+                "Gate_01,%d,%d,%d,%d,%d,%d\r\n",
+                count,
+                A,
+                B,
+                C,
+                D,
+                E
+            );
+
+            UART_SendString(buffer);
+        }
+
+
+
+
 
 
         if(UART1_IsRxReady())
@@ -27662,22 +27767,31 @@ int main(void)
             switch(state)
             {
                 case 0:
+
                     if(c == 'L')
                         state = 1;
+
                     break;
 
                 case 1:
+
                     if(c == 'E')
                         state = 2;
+
                     else if(c == 'L')
                         state = 1;
+
                     else
                         state = 0;
+
                     break;
 
                 case 2:
+
                     if(c == 'D')
                     {
+
+
                         count = 0;
 
                         A = 0;
@@ -27686,21 +27800,32 @@ int main(void)
                         D = 0;
                         E = 0;
 
+
+
                         IRWasHigh = 0;
                         PIR_Reset = 1;
                     }
 
                     state = 0;
+
                     break;
 
                 default:
+
                     state = 0;
+
                     break;
             }
         }
 
+
+
+
+
         if(PIR_Reset == 1)
         {
+
+
             LATAbits.LATA0 = 0;
 
             if(PORTDbits.RD0 == 0)
@@ -27714,6 +27839,7 @@ int main(void)
             if(PORTDbits.RD0 == 1)
             {
                 LATAbits.LATA0 = 1;
+
                 IRWasHigh = 1;
             }
             else
@@ -27723,44 +27849,16 @@ int main(void)
                 if(IRWasHigh == 1)
                 {
                     count++;
+
                     IRWasHigh = 0;
-
-                    sprintf(buffer,
-                            "Gate_01,%d,%d,%d,%d,%d,%d\r\n",
-                            count,
-                            A,
-                            B,
-                            C,
-                            D,
-                            E);
-                    LATDbits.LATD2 = 1;
-                    int secTarget = 0;
-                    if (sec > 44){
-                        secTarget = sec - 45;
-                    }
-                    else {
-                        secTarget = sec + 15;
-                    }
-                    while(sec != secTarget){
-                        RTC_UpdateTime();
-                    }
-
-                    UART_SendString(buffer);
-
-                    if (sec > 44){
-                        secTarget = sec - 45;
-                    }
-                    else {
-                        secTarget = sec + 15;
-                    }
-                    while(sec != secTarget){
-                        RTC_UpdateTime();
-                    }
-                    LATDbits.LATD2 = 0;
                 }
             }
         }
-# 237 "main.c"
+
+
+
+
+
         buttonTask();
     }
 }

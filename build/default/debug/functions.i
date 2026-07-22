@@ -27962,7 +27962,7 @@ void Timer0_Init(void)
 
     T0CON1bits.T0CKPS = 0b1111;
 
-    TMR0H = 0xFC;
+    TMR0H = 0xFE;
     TMR0L = 0x00;
 
     PIE3bits.TMR0IE = 1;

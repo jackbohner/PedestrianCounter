@@ -120,19 +120,15 @@ I2C_ERROR_BUS_COLLISION 3
 [v _Init_RTC_Interrupt_RC5 Init_RTC_Interrupt_RC5 `(v  1 e 1 0 ]
 "290
 [v _RTC_UpdateTime RTC_UpdateTime `(a  1 e 1 0 ]
-"311
-[v _RTC_SleepUntil RTC_SleepUntil `(v  1 e 1 0 ]
 "348
 [v _UART_SendString UART_SendString `(v  1 e 1 0 ]
 "362
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
-"387
-[v _ADC_Read ADC_Read `(us  1 e 2 0 ]
 "399
 [v _Timer0_Init Timer0_Init `(v  1 e 1 0 ]
-"14 /Users/emanuelbarajas/MPLABXProjects/Test.X/main.c
+"17 /Users/emanuelbarajas/MPLABXProjects/Test.X/main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"44
+"76
 [v _main main `(i  1 e 2 0 ]
 "56 /Users/emanuelbarajas/MPLABXProjects/Test.X/mcc_generated_files/i2c_host/src/i2c1.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
@@ -236,7 +232,7 @@ I2C_ERROR_BUS_COLLISION 3
 [v _UART2_OverrunErrorCallbackRegister UART2_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
 "291
 [v _UART2_ParityErrorCallbackRegister UART2_ParityErrorCallbackRegister `(v  1 e 1 0 ]
-[s S2181 . 1 `uc 1 SWIE 1 0 :1:0 
+[s S2164 . 1 `uc 1 SWIE 1 0 :1:0 
 `uc 1 HLVDIE 1 0 :1:1 
 `uc 1 OSFIE 1 0 :1:2 
 `uc 1 CSWIE 1 0 :1:3 
@@ -246,9 +242,9 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 IOCIE 1 0 :1:7 
 ]
 "3347 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h
-[u S2190 . 1 `S2181 1 . 1 0 ]
-[v _PIE0bits PIE0bits `VES2190  1 e 1 @14736 ]
-[s S2638 . 1 `uc 1 I2C1TXIE 1 0 :1:0 
+[u S2173 . 1 `S2164 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES2173  1 e 1 @14736 ]
+[s S2621 . 1 `uc 1 I2C1TXIE 1 0 :1:0 
 `uc 1 I2C1IE 1 0 :1:1 
 `uc 1 I2C1EIE 1 0 :1:2 
 `uc 1 U1RXIE 1 0 :1:3 
@@ -258,8 +254,8 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 TMR0IE 1 0 :1:7 
 ]
 "3533
-[u S2647 . 1 `S2638 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES2647  1 e 1 @14739 ]
+[u S2630 . 1 `S2621 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES2630  1 e 1 @14739 ]
 [s S1626 . 1 `uc 1 SWIF 1 0 :1:0 
 `uc 1 HLVDIF 1 0 :1:1 
 `uc 1 OSFIF 1 0 :1:2 
@@ -372,7 +368,7 @@ I2C_ERROR_BUS_COLLISION 3
 [v _IOCAF IOCAF `VEuc  1 e 1 @14919 ]
 "8513
 [v _ANSELB ANSELB `VEuc  1 e 1 @14928 ]
-[s S2084 . 1 `uc 1 ANSELB0 1 0 :1:0 
+[s S2067 . 1 `uc 1 ANSELB0 1 0 :1:0 
 `uc 1 ANSELB1 1 0 :1:1 
 `uc 1 ANSELB2 1 0 :1:2 
 `uc 1 ANSELB3 1 0 :1:3 
@@ -382,11 +378,11 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 ANSELB7 1 0 :1:7 
 ]
 "8530
-[u S2093 . 1 `S2084 1 . 1 0 ]
-[v _ANSELBbits ANSELBbits `VES2093  1 e 1 @14928 ]
+[u S2076 . 1 `S2067 1 . 1 0 ]
+[v _ANSELBbits ANSELBbits `VES2076  1 e 1 @14928 ]
 "8575
 [v _WPUB WPUB `VEuc  1 e 1 @14929 ]
-[s S2105 . 1 `uc 1 WPUB0 1 0 :1:0 
+[s S2088 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
 `uc 1 WPUB2 1 0 :1:2 
 `uc 1 WPUB3 1 0 :1:3 
@@ -396,8 +392,8 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 WPUB7 1 0 :1:7 
 ]
 "8592
-[u S2114 . 1 `S2105 1 . 1 0 ]
-[v _WPUBbits WPUBbits `VES2114  1 e 1 @14929 ]
+[u S2097 . 1 `S2088 1 . 1 0 ]
+[v _WPUBbits WPUBbits `VES2097  1 e 1 @14929 ]
 "8637
 [v _ODCONB ODCONB `VEuc  1 e 1 @14930 ]
 "8699
@@ -406,7 +402,7 @@ I2C_ERROR_BUS_COLLISION 3
 [v _INLVLB INLVLB `VEuc  1 e 1 @14932 ]
 "8823
 [v _IOCBP IOCBP `VEuc  1 e 1 @14933 ]
-[s S2147 . 1 `uc 1 IOCBP0 1 0 :1:0 
+[s S2130 . 1 `uc 1 IOCBP0 1 0 :1:0 
 `uc 1 IOCBP1 1 0 :1:1 
 `uc 1 IOCBP2 1 0 :1:2 
 `uc 1 IOCBP3 1 0 :1:3 
@@ -416,11 +412,11 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 IOCBP7 1 0 :1:7 
 ]
 "8840
-[u S2156 . 1 `S2147 1 . 1 0 ]
-[v _IOCBPbits IOCBPbits `VES2156  1 e 1 @14933 ]
+[u S2139 . 1 `S2130 1 . 1 0 ]
+[v _IOCBPbits IOCBPbits `VES2139  1 e 1 @14933 ]
 "8885
 [v _IOCBN IOCBN `VEuc  1 e 1 @14934 ]
-[s S2126 . 1 `uc 1 IOCBN0 1 0 :1:0 
+[s S2109 . 1 `uc 1 IOCBN0 1 0 :1:0 
 `uc 1 IOCBN1 1 0 :1:1 
 `uc 1 IOCBN2 1 0 :1:2 
 `uc 1 IOCBN3 1 0 :1:3 
@@ -430,8 +426,8 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 IOCBN7 1 0 :1:7 
 ]
 "8902
-[u S2135 . 1 `S2126 1 . 1 0 ]
-[v _IOCBNbits IOCBNbits `VES2135  1 e 1 @14934 ]
+[u S2118 . 1 `S2109 1 . 1 0 ]
+[v _IOCBNbits IOCBNbits `VES2118  1 e 1 @14934 ]
 "8947
 [v _IOCBF IOCBF `VEuc  1 e 1 @14935 ]
 [s S1647 . 1 `uc 1 IOCBF0 1 0 :1:0 
@@ -452,7 +448,7 @@ I2C_ERROR_BUS_COLLISION 3
 [v _RB2I2C RB2I2C `VEuc  1 e 1 @14939 ]
 "9225
 [v _ANSELC ANSELC `VEuc  1 e 1 @14944 ]
-[s S2291 . 1 `uc 1 ANSELC0 1 0 :1:0 
+[s S2274 . 1 `uc 1 ANSELC0 1 0 :1:0 
 `uc 1 ANSELC1 1 0 :1:1 
 `uc 1 ANSELC2 1 0 :1:2 
 `uc 1 ANSELC3 1 0 :1:3 
@@ -462,11 +458,11 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 ANSELC7 1 0 :1:7 
 ]
 "9242
-[u S2300 . 1 `S2291 1 . 1 0 ]
-[v _ANSELCbits ANSELCbits `VES2300  1 e 1 @14944 ]
+[u S2283 . 1 `S2274 1 . 1 0 ]
+[v _ANSELCbits ANSELCbits `VES2283  1 e 1 @14944 ]
 "9287
 [v _WPUC WPUC `VEuc  1 e 1 @14945 ]
-[s S2312 . 1 `uc 1 WPUC0 1 0 :1:0 
+[s S2295 . 1 `uc 1 WPUC0 1 0 :1:0 
 `uc 1 WPUC1 1 0 :1:1 
 `uc 1 WPUC2 1 0 :1:2 
 `uc 1 WPUC3 1 0 :1:3 
@@ -476,8 +472,8 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 WPUC7 1 0 :1:7 
 ]
 "9304
-[u S2321 . 1 `S2312 1 . 1 0 ]
-[v _WPUCbits WPUCbits `VES2321  1 e 1 @14945 ]
+[u S2304 . 1 `S2295 1 . 1 0 ]
+[v _WPUCbits WPUCbits `VES2304  1 e 1 @14945 ]
 "9349
 [v _ODCONC ODCONC `VEuc  1 e 1 @14946 ]
 "9411
@@ -486,7 +482,7 @@ I2C_ERROR_BUS_COLLISION 3
 [v _INLVLC INLVLC `VEuc  1 e 1 @14948 ]
 "9535
 [v _IOCCP IOCCP `VEuc  1 e 1 @14949 ]
-[s S2366 . 1 `uc 1 IOCCP0 1 0 :1:0 
+[s S2349 . 1 `uc 1 IOCCP0 1 0 :1:0 
 `uc 1 IOCCP1 1 0 :1:1 
 `uc 1 IOCCP2 1 0 :1:2 
 `uc 1 IOCCP3 1 0 :1:3 
@@ -496,11 +492,11 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 IOCCP7 1 0 :1:7 
 ]
 "9552
-[u S2375 . 1 `S2366 1 . 1 0 ]
-[v _IOCCPbits IOCCPbits `VES2375  1 e 1 @14949 ]
+[u S2358 . 1 `S2349 1 . 1 0 ]
+[v _IOCCPbits IOCCPbits `VES2358  1 e 1 @14949 ]
 "9597
 [v _IOCCN IOCCN `VEuc  1 e 1 @14950 ]
-[s S2345 . 1 `uc 1 IOCCN0 1 0 :1:0 
+[s S2328 . 1 `uc 1 IOCCN0 1 0 :1:0 
 `uc 1 IOCCN1 1 0 :1:1 
 `uc 1 IOCCN2 1 0 :1:2 
 `uc 1 IOCCN3 1 0 :1:3 
@@ -510,8 +506,8 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 IOCCN7 1 0 :1:7 
 ]
 "9614
-[u S2354 . 1 `S2345 1 . 1 0 ]
-[v _IOCCNbits IOCCNbits `VES2354  1 e 1 @14950 ]
+[u S2337 . 1 `S2328 1 . 1 0 ]
+[v _IOCCNbits IOCCNbits `VES2337  1 e 1 @14950 ]
 "9659
 [v _IOCCF IOCCF `VEuc  1 e 1 @14951 ]
 [s S1673 . 1 `uc 1 IOCCF0 1 0 :1:0 
@@ -943,7 +939,7 @@ I2C_ERROR_BUS_COLLISION 3
 [v _U1ERRIRbits U1ERRIRbits `VES1416  1 e 1 @15865 ]
 "26857
 [v _U1ERRIE U1ERRIE `VEuc  1 e 1 @15866 ]
-[s S2391 . 1 `uc 1 ADFVR 1 0 :2:0 
+[s S2374 . 1 `uc 1 ADFVR 1 0 :2:0 
 `uc 1 CDAFVR 1 0 :2:2 
 `uc 1 TSRNG 1 0 :1:4 
 `uc 1 TSEN 1 0 :1:5 
@@ -951,7 +947,7 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 EN 1 0 :1:7 
 ]
 "27660
-[s S2398 . 1 `uc 1 ADFVR0 1 0 :1:0 
+[s S2381 . 1 `uc 1 ADFVR0 1 0 :1:0 
 `uc 1 ADFVR1 1 0 :1:1 
 `uc 1 CDAFVR0 1 0 :1:2 
 `uc 1 CDAFVR1 1 0 :1:3 
@@ -959,15 +955,15 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 FVRRDY 1 0 :1:6 
 `uc 1 FVREN 1 0 :1:7 
 ]
-[u S2406 . 1 `S2391 1 . 1 0 `S2398 1 . 1 0 ]
-[v _FVRCONbits FVRCONbits `VES2406  1 e 1 @16065 ]
+[u S2389 . 1 `S2374 1 . 1 0 `S2381 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES2389  1 e 1 @16065 ]
 "30242
 [v _ADRESL ADRESL `VEuc  1 e 1 @16111 ]
 "30370
 [v _ADRESH ADRESH `VEuc  1 e 1 @16112 ]
 "30490
 [v _ADPCH ADPCH `VEuc  1 e 1 @16113 ]
-[s S2425 . 1 `uc 1 GO 1 0 :1:0 
+[s S2408 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM 1 0 :2:2 
 `uc 1 CS 1 0 :1:4 
@@ -976,7 +972,7 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 ON 1 0 :1:7 
 ]
 "31178
-[s S2433 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S2416 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -984,80 +980,80 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 ADCONT 1 0 :1:6 
 `uc 1 ADON 1 0 :1:7 
 ]
-[s S2441 . 1 `uc 1 DONE 1 0 :1:0 
+[s S2424 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM0 1 0 :1:2 
 ]
-[s S2445 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+[s S2428 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
 ]
-[s S2447 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S2430 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 ]
-[u S2451 . 1 `S2425 1 . 1 0 `S2433 1 . 1 0 `S2441 1 . 1 0 `S2445 1 . 1 0 `S2447 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES2451  1 e 1 @16120 ]
-[s S2485 . 1 `uc 1 PREF 1 0 :4:0 
+[u S2434 . 1 `S2408 1 . 1 0 `S2416 1 . 1 0 `S2424 1 . 1 0 `S2428 1 . 1 0 `S2430 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES2434  1 e 1 @16120 ]
+[s S2468 . 1 `uc 1 PREF 1 0 :4:0 
 `uc 1 NREF 1 0 :4:4 
 ]
 "31784
-[s S2488 . 1 `uc 1 ADPREF 1 0 :4:0 
+[s S2471 . 1 `uc 1 ADPREF 1 0 :4:0 
 `uc 1 ADNREF 1 0 :4:4 
 ]
-[s S2491 . 1 `uc 1 PREF0 1 0 :1:0 
+[s S2474 . 1 `uc 1 PREF0 1 0 :1:0 
 `uc 1 PREF1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 NREF0 1 0 :1:4 
 ]
-[s S2496 . 1 `uc 1 ADPREF0 1 0 :1:0 
+[s S2479 . 1 `uc 1 ADPREF0 1 0 :1:0 
 `uc 1 ADPREF1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADNREF0 1 0 :1:4 
 ]
-[u S2501 . 1 `S2485 1 . 1 0 `S2488 1 . 1 0 `S2491 1 . 1 0 `S2496 1 . 1 0 ]
-[v _ADREFbits ADREFbits `VES2501  1 e 1 @16125 ]
+[u S2484 . 1 `S2468 1 . 1 0 `S2471 1 . 1 0 `S2474 1 . 1 0 `S2479 1 . 1 0 ]
+[v _ADREFbits ADREFbits `VES2484  1 e 1 @16125 ]
 "31931
 [v _ADCLK ADCLK `VEuc  1 e 1 @16127 ]
 "45318
 [v _TMR0L TMR0L `VEuc  1 e 1 @16310 ]
 "45456
 [v _TMR0H TMR0H `VEuc  1 e 1 @16311 ]
-[s S2526 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S2509 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "45744
-[s S2532 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S2515 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "45744
-[s S2538 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S2521 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
 `uc 1 T016BIT 1 0 :1:4 
 ]
 "45744
-[s S2544 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S2527 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
 "45744
-[u S2549 . 1 `S2526 1 . 1 0 `S2532 1 . 1 0 `S2538 1 . 1 0 `S2544 1 . 1 0 ]
+[u S2532 . 1 `S2509 1 . 1 0 `S2515 1 . 1 0 `S2521 1 . 1 0 `S2527 1 . 1 0 ]
 "45744
 "45744
-[v _T0CON0bits T0CON0bits `VES2549  1 e 1 @16312 ]
-[s S2578 . 1 `uc 1 CKPS 1 0 :4:0 
+[v _T0CON0bits T0CON0bits `VES2532  1 e 1 @16312 ]
+[s S2561 . 1 `uc 1 CKPS 1 0 :4:0 
 `uc 1 ASYNC 1 0 :1:4 
 `uc 1 CS 1 0 :3:5 
 ]
 "45871
-[s S2582 . 1 `uc 1 CKPS0 1 0 :1:0 
+[s S2565 . 1 `uc 1 CKPS0 1 0 :1:0 
 `uc 1 CKPS1 1 0 :1:1 
 `uc 1 CKPS2 1 0 :1:2 
 `uc 1 CKPS3 1 0 :1:3 
@@ -1067,12 +1063,12 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 CS2 1 0 :1:7 
 ]
 "45871
-[s S2591 . 1 `uc 1 T0CKPS 1 0 :4:0 
+[s S2574 . 1 `uc 1 T0CKPS 1 0 :4:0 
 `uc 1 . 1 0 :1:4 
 `uc 1 T0CS 1 0 :3:5 
 ]
 "45871
-[s S2595 . 1 `uc 1 T0CKPS0 1 0 :1:0 
+[s S2578 . 1 `uc 1 T0CKPS0 1 0 :1:0 
 `uc 1 T0CKPS1 1 0 :1:1 
 `uc 1 T0CKPS2 1 0 :1:2 
 `uc 1 T0CKPS3 1 0 :1:3 
@@ -1082,10 +1078,10 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 T0CS2 1 0 :1:7 
 ]
 "45871
-[u S2604 . 1 `S2578 1 . 1 0 `S2582 1 . 1 0 `S2591 1 . 1 0 `S2595 1 . 1 0 ]
+[u S2587 . 1 `S2561 1 . 1 0 `S2565 1 . 1 0 `S2574 1 . 1 0 `S2578 1 . 1 0 ]
 "45871
 "45871
-[v _T0CON1bits T0CON1bits `VES2604  1 e 1 @16313 ]
+[v _T0CON1bits T0CON1bits `VES2587  1 e 1 @16313 ]
 "45976
 [v _LATA LATA `VEuc  1 e 1 @16314 ]
 [s S1775 . 1 `uc 1 LATA0 1 0 :1:0 
@@ -1162,7 +1158,7 @@ I2C_ERROR_BUS_COLLISION 3
 [v _TRISAbits TRISAbits `VES1763  1 e 1 @16322 ]
 "46538
 [v _TRISB TRISB `VEuc  1 e 1 @16323 ]
-[s S2063 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S2046 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -1172,13 +1168,13 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "46555
-[u S2072 . 1 `S2063 1 . 1 0 ]
+[u S2055 . 1 `S2046 1 . 1 0 ]
 "46555
 "46555
-[v _TRISBbits TRISBbits `VES2072  1 e 1 @16323 ]
+[v _TRISBbits TRISBbits `VES2055  1 e 1 @16323 ]
 "46600
 [v _TRISC TRISC `VEuc  1 e 1 @16324 ]
-[s S2270 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S2253 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -1188,10 +1184,10 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "46617
-[u S2279 . 1 `S2270 1 . 1 0 ]
+[u S2262 . 1 `S2253 1 . 1 0 ]
 "46617
 "46617
-[v _TRISCbits TRISCbits `VES2279  1 e 1 @16324 ]
+[v _TRISCbits TRISCbits `VES2262  1 e 1 @16324 ]
 "46662
 [v _TRISD TRISD `VEuc  1 e 1 @16325 ]
 [s S1712 . 1 `uc 1 TRISD0 1 0 :1:0 
@@ -1210,7 +1206,7 @@ I2C_ERROR_BUS_COLLISION 3
 [v _TRISDbits TRISDbits `VES1721  1 e 1 @16325 ]
 "46724
 [v _TRISE TRISE `VEuc  1 e 1 @16326 ]
-[s S2219 . 1 `uc 1 RB0 1 0 :1:0 
+[s S2202 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -1220,11 +1216,11 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 RB7 1 0 :1:7 
 ]
 "46835
-[u S2228 . 1 `S2219 1 . 1 0 ]
+[u S2211 . 1 `S2202 1 . 1 0 ]
 "46835
 "46835
-[v _PORTBbits PORTBbits `VES2228  1 e 1 @16331 ]
-[s S2249 . 1 `uc 1 RC0 1 0 :1:0 
+[v _PORTBbits PORTBbits `VES2211  1 e 1 @16331 ]
+[s S2232 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -1234,11 +1230,11 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 RC7 1 0 :1:7 
 ]
 "46897
-[u S2258 . 1 `S2249 1 . 1 0 ]
+[u S2241 . 1 `S2232 1 . 1 0 ]
 "46897
 "46897
-[v _PORTCbits PORTCbits `VES2258  1 e 1 @16332 ]
-[s S1926 . 1 `uc 1 RD0 1 0 :1:0 
+[v _PORTCbits PORTCbits `VES2241  1 e 1 @16332 ]
+[s S1918 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -1248,10 +1244,10 @@ I2C_ERROR_BUS_COLLISION 3
 `uc 1 RD7 1 0 :1:7 
 ]
 "46959
-[u S1935 . 1 `S1926 1 . 1 0 ]
+[u S1927 . 1 `S1918 1 . 1 0 ]
 "46959
 "46959
-[v _PORTDbits PORTDbits `VES1935  1 e 1 @16333 ]
+[v _PORTDbits PORTDbits `VES1927  1 e 1 @16333 ]
 [s S437 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -1304,11 +1300,11 @@ I2C_ERROR_BUS_COLLISION 3
 [v _min min `uc  1 e 1 0 ]
 "23
 [v _sec sec `uc  1 e 1 0 ]
-"10 /Users/emanuelbarajas/MPLABXProjects/Test.X/main.c
+"9 /Users/emanuelbarajas/MPLABXProjects/Test.X/main.c
 [v _LoRaState LoRaState `VEuc  1 e 1 0 ]
-"11
+"10
 [v _LoRaSeconds LoRaSeconds `VEuc  1 e 1 0 ]
-"12
+"11
 [v _SendMessage SendMessage `VEuc  1 e 1 0 ]
 "53 /Users/emanuelbarajas/MPLABXProjects/Test.X/mcc_generated_files/i2c_host/src/i2c1.c
 [v _I2C1_Callback I2C1_Callback `*.38(v  1 s 3 I2C1_Callback ]
@@ -1343,48 +1339,38 @@ I2C_ERROR_BUS_COLLISION 3
 [v _UART2_OverrunErrorHandler UART2_OverrunErrorHandler `*.38(v  1 s 3 UART2_OverrunErrorHandler ]
 "59
 [v _UART2_ParityErrorHandler UART2_ParityErrorHandler `*.38(v  1 s 3 UART2_ParityErrorHandler ]
-"44 /Users/emanuelbarajas/MPLABXProjects/Test.X/main.c
+"76 /Users/emanuelbarajas/MPLABXProjects/Test.X/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"176
-[v main@c c `uc  1 a 1 84 ]
-"247
-[v main@targetsec targetsec `i  1 a 2 79 ]
-"51
+"217
+[v main@c c `uc  1 a 1 76 ]
+"85
 [v main@buffer buffer `[64]uc  1 a 64 2 ]
-"52
-[v main@adc adc `us  1 a 2 82 ]
-"47
-[v main@toggle toggle `i  1 a 2 76 ]
-"46
-[v main@count count `i  1 a 2 74 ]
-"48
-[v main@IRWasHigh IRWasHigh `i  1 a 2 70 ]
-"49
-[v main@PIR_Reset PIR_Reset `i  1 a 2 68 ]
-"57
-[v main@wakeHour wakeHour `uc  1 a 1 81 ]
-"50
-[v main@state state `uc  1 a 1 78 ]
-"58
-[v main@wakeMinute wakeMinute `uc  1 a 1 73 ]
-"54
-[v main@sleepHour sleepHour `uc  1 a 1 72 ]
-"60
-[v main@prevsec prevsec `uc  1 a 1 67 ]
-"55
-[v main@sleepMinute sleepMinute `uc  1 a 1 66 ]
-"282
+"80
+[v main@IRWasHigh IRWasHigh `i  1 a 2 73 ]
+"81
+[v main@PIR_Reset PIR_Reset `i  1 a 2 71 ]
+"78
+[v main@count count `i  1 a 2 69 ]
+"83
+[v main@state state `uc  1 a 1 75 ]
+"95
+[v main@prevsec prevsec `uc  1 a 1 68 ]
+"92
+[v main@wakeHour wakeHour `uc  1 a 1 67 ]
+"89
+[v main@sleepHour sleepHour `uc  1 a 1 66 ]
+"316
 } 0
 "9 /Applications/microchip/xc8/v3.10/pic/sources/c99/common/nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S3479 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+[u S3463 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
 "13
-[s S3482 _IO_FILE 11 `S3479 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S3482  1 a 11 66 ]
+[s S3466 _IO_FILE 11 `S3463 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S3466  1 a 11 64 ]
 "12
-[v sprintf@ap ap `[1]*.30v  1 a 1 65 ]
+[v sprintf@ap ap `[1]*.30v  1 a 1 63 ]
 "9
 [v sprintf@s s `*.30uc  1 p 1 49 ]
 [v sprintf@fmt fmt `*.31Cuc  1 p 1 50 ]
@@ -1404,9 +1390,9 @@ I2C_ERROR_BUS_COLLISION 3
 {
 "1820
 [v vfprintf@cfmt cfmt `*.31uc  1 a 1 48 ]
-[s S3514 _IO_FILE 0 ]
+[s S3498 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.30S3514  1 p 1 45 ]
+[v vfprintf@fp fp `*.30S3498  1 p 1 45 ]
 [v vfprintf@fmt fmt `*.31Cuc  1 p 1 46 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 47 ]
 "1840
@@ -1414,16 +1400,16 @@ I2C_ERROR_BUS_COLLISION 3
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S3538 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S3522 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S3538  1 a 4 40 ]
+[v vfpfcnvrt@convarg convarg `S3522  1 a 4 40 ]
 "1179
 [v vfpfcnvrt@cp cp `*.31uc  1 a 1 44 ]
 "1180
 [v vfpfcnvrt@done done `a  1 a 1 39 ]
-[s S3514 _IO_FILE 0 ]
+[s S3498 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.30S3514  1 p 1 36 ]
+[v vfpfcnvrt@fp fp `*.30S3498  1 p 1 36 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 37 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 38 ]
 "1814
@@ -1438,9 +1424,9 @@ I2C_ERROR_BUS_COLLISION 3
 [v xtoa@c c `uc  1 a 1 33 ]
 "1067
 [v xtoa@p p `a  1 a 1 30 ]
-[s S3514 _IO_FILE 0 ]
+[s S3498 _IO_FILE 0 ]
 "1055
-[v xtoa@fp fp `*.30S3514  1 p 1 24 ]
+[v xtoa@fp fp `*.30S3498  1 p 1 24 ]
 [v xtoa@d d `ui  1 p 2 25 ]
 "1153
 } 0
@@ -1452,9 +1438,9 @@ I2C_ERROR_BUS_COLLISION 3
 [v utoa@w w `i  1 a 2 28 ]
 "1007
 [v utoa@p p `a  1 a 1 27 ]
-[s S3514 _IO_FILE 0 ]
+[s S3498 _IO_FILE 0 ]
 "1001
-[v utoa@fp fp `*.30S3514  1 p 1 24 ]
+[v utoa@fp fp `*.30S3498  1 p 1 24 ]
 [v utoa@d d `ui  1 p 2 25 ]
 "1047
 } 0
@@ -1502,9 +1488,9 @@ I2C_ERROR_BUS_COLLISION 3
 [v dtoa@s s `uc  1 a 1 32 ]
 "520
 [v dtoa@p p `a  1 a 1 29 ]
-[s S3514 _IO_FILE 0 ]
+[s S3498 _IO_FILE 0 ]
 "513
-[v dtoa@fp fp `*.30S3514  1 p 1 24 ]
+[v dtoa@fp fp `*.30S3498  1 p 1 24 ]
 [v dtoa@d d `i  1 p 2 25 ]
 "583
 } 0
@@ -1513,9 +1499,9 @@ I2C_ERROR_BUS_COLLISION 3
 {
 "195
 [v pad@i i `i  1 a 2 22 ]
-[s S3514 _IO_FILE 0 ]
+[s S3498 _IO_FILE 0 ]
 "193
-[v pad@fp fp `*.30S3514  1 p 1 16 ]
+[v pad@fp fp `*.30S3498  1 p 1 16 ]
 [v pad@buf buf `*.39uc  1 p 2 17 ]
 [v pad@p p `i  1 p 2 19 ]
 "226
@@ -1529,18 +1515,18 @@ I2C_ERROR_BUS_COLLISION 3
 [v fputs@c c `uc  1 a 1 13 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 10 ]
-[u S3479 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
-[s S3482 _IO_FILE 11 `S3479 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.30S3482  1 p 1 12 ]
+[u S3463 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+[s S3466 _IO_FILE 11 `S3463 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.30S3466  1 p 1 12 ]
 "19
 } 0
 "8 /Applications/microchip/xc8/v3.10/pic/sources/c99/common/nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S3479 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
-[s S3482 _IO_FILE 11 `S3479 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.30S3482  1 p 1 4 ]
+[u S3463 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+[s S3466 _IO_FILE 11 `S3463 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.30S3466  1 p 1 4 ]
 "24
 } 0
 "132 /Users/emanuelbarajas/MPLABXProjects/Test.X/functions.c
@@ -1570,6 +1556,30 @@ I2C_ERROR_BUS_COLLISION 3
 {
 [v abs@a a `i  1 p 2 6 ]
 "4
+} 0
+"7 /Applications/microchip/xc8/v3.10/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 /Applications/microchip/xc8/v3.10/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
 } 0
 "64 /Users/emanuelbarajas/MPLABXProjects/Test.X/functions.c
 [v _buttonTask buttonTask `(v  1 e 1 0 ]
@@ -1733,73 +1743,12 @@ I2C_ERROR_BUS_COLLISION 3
 [v I2C1_WriteRead@readLength readLength `ui  1 p 2 7 ]
 "177
 } 0
-"311 /Users/emanuelbarajas/MPLABXProjects/Test.X/functions.c
-[v _RTC_SleepUntil RTC_SleepUntil `(v  1 e 1 0 ]
+"265 /Users/emanuelbarajas/MPLABXProjects/Test.X/functions.c
+[v _Init_RTC_Interrupt_RC5 Init_RTC_Interrupt_RC5 `(v  1 e 1 0 ]
 {
-[v RTC_SleepUntil@wakeHour wakeHour `uc  1 p 1 wreg ]
-"321
-[v RTC_SleepUntil@dummy dummy `VEuc  1 a 1 25 ]
-"311
-[v RTC_SleepUntil@wakeHour wakeHour `uc  1 p 1 wreg ]
-[v RTC_SleepUntil@wakeMin wakeMin `uc  1 p 1 20 ]
-[v RTC_SleepUntil@wakeSec wakeSec `uc  1 p 1 21 ]
-"313
-[v RTC_SleepUntil@wakeHour wakeHour `uc  1 p 1 24 ]
-"330
-} 1
-"207 /Users/emanuelbarajas/MPLABXProjects/Test.X/mcc_generated_files/uart/src/uart2.c
-[v _UART2_IsTxDone UART2_IsTxDone `(a  1 e 1 0 ]
-{
-"210
+"277
 } 0
-"221 /Users/emanuelbarajas/MPLABXProjects/Test.X/functions.c
-[v _DS3231_SetAlarm1 DS3231_SetAlarm1 `(a  1 e 1 0 ]
-{
-[v DS3231_SetAlarm1@alarmHour alarmHour `uc  1 p 1 wreg ]
-"223
-[v DS3231_SetAlarm1@data data `[5]uc  1 a 5 15 ]
-"221
-[v DS3231_SetAlarm1@alarmHour alarmHour `uc  1 p 1 wreg ]
-[v DS3231_SetAlarm1@alarmMin alarmMin `uc  1 p 1 11 ]
-[v DS3231_SetAlarm1@alarmSec alarmSec `uc  1 p 1 12 ]
-"225
-[v DS3231_SetAlarm1@alarmHour alarmHour `uc  1 p 1 14 ]
-"250
-} 1
-"143
-[v _dec_to_bcd dec_to_bcd `(uc  1 e 1 0 ]
-{
-[v dec_to_bcd@val val `uc  1 p 1 wreg ]
-[v dec_to_bcd@val val `uc  1 p 1 wreg ]
-"145
-[v dec_to_bcd@val val `uc  1 p 1 10 ]
-"146
-} 1
-"7 /Applications/microchip/xc8/v3.10/pic/sources/c99/common/awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
-} 0
-"7 /Applications/microchip/xc8/v3.10/pic/sources/c99/common/awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
-} 0
-"252 /Users/emanuelbarajas/MPLABXProjects/Test.X/functions.c
+"252
 [v _DS3231_ClearAlarmFlag DS3231_ClearAlarmFlag `(a  1 e 1 0 ]
 {
 "255
@@ -1875,23 +1824,13 @@ I2C_ERROR_BUS_COLLISION 3
 {
 "120
 } 0
-"265 /Users/emanuelbarajas/MPLABXProjects/Test.X/functions.c
-[v _Init_RTC_Interrupt_RC5 Init_RTC_Interrupt_RC5 `(v  1 e 1 0 ]
-{
-"277
-} 0
-"387
-[v _ADC_Read ADC_Read `(us  1 e 2 0 ]
-{
-"397
-} 0
-"362
+"362 /Users/emanuelbarajas/MPLABXProjects/Test.X/functions.c
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
 "385
 } 0
-"14 /Users/emanuelbarajas/MPLABXProjects/Test.X/main.c
+"17 /Users/emanuelbarajas/MPLABXProjects/Test.X/main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"42
+"70
 } 0

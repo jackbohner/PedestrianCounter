@@ -3775,8 +3775,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;functions.c: 405:     T0CON1bits.T0CKPS = 0b1111;
 [e = . . _T0CON1bits 2 0 -> -> 15 `i `uc ]
 "407
-[; ;functions.c: 407:     TMR0H = 0xFC;
-[e = _TMR0H -> -> 252 `i `uc ]
+[; ;functions.c: 407:     TMR0H = 0xFE;
+[e = _TMR0H -> -> 254 `i `uc ]
 "408
 [; ;functions.c: 408:     TMR0L = 0x00;
 [e = _TMR0L -> -> 0 `i `uc ]

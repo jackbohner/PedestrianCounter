@@ -205,12 +205,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [; ;./functions.h: 13: extern uint8_t min;
 [v _min `uc ~T0 @X0 0 e ]
-"218 ./mcc_generated_files/system/../uart/uart2.h
-[; ;./mcc_generated_files/system/../uart/uart2.h: 218: _Bool UART2_IsTxDone(void);
-[v _UART2_IsTxDone `(a ~T0 @X0 0 ef ]
-"51 ./functions.h
-[; ;./functions.h: 51: void RTC_SleepUntil(uint8_t wakeHour, uint8_t wakeMin, uint8_t wakeSec);
-[v _RTC_SleepUntil `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "121 /Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h
 [; ;/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
@@ -252,9 +246,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29 ./functions.h
 [; ;./functions.h: 29: void buttonTask(void);
 [v _buttonTask `(v ~T0 @X0 0 ef ]
-"57
-[; ;./functions.h: 57: uint16_t ADC_Read(void);
-[v _ADC_Read `(us ~T0 @X0 0 ef ]
 "250 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2481,772 +2472,647 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48482
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h: 48482: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
-"10 main.c
-[; ;main.c: 10: volatile uint8_t LoRaState = 0;
+"9 main.c
+[; ;main.c: 9: volatile uint8_t LoRaState = 0;
 [v _LoRaState `Vuc ~T0 @X0 1 e ]
 [i _LoRaState
 -> -> 0 `i `uc
 ]
-"11
-[; ;main.c: 11: volatile uint8_t LoRaSeconds = 0;
+"10
+[; ;main.c: 10: volatile uint8_t LoRaSeconds = 0;
 [v _LoRaSeconds `Vuc ~T0 @X0 1 e ]
 [i _LoRaSeconds
 -> -> 0 `i `uc
 ]
-"12
-[; ;main.c: 12: volatile uint8_t SendMessage = 0;
+"11
+[; ;main.c: 11: volatile uint8_t SendMessage = 0;
 [v _SendMessage `Vuc ~T0 @X0 1 e ]
 [i _SendMessage
 -> -> 0 `i `uc
 ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"14
-[; ;main.c: 14: void __attribute__((picinterrupt(("irq(default), base(8)")))) ISR(void)
+"17
+[; ;main.c: 17: void __attribute__((picinterrupt(("irq(default), base(8)")))) ISR(void)
 [v _ISR `(v ~T1 @X0 1 ef ]
-"15
-[; ;main.c: 15: {
+"18
+[; ;main.c: 18: {
 {
 [e :U _ISR ]
 [f ]
-"16
-[; ;main.c: 16:     if(PIR3bits.TMR0IF)
+"19
+[; ;main.c: 19:     if(PIR3bits.TMR0IF)
 [e $ ! != -> . . _PIR3bits 0 7 `i -> 0 `i 2254  ]
-"17
-[; ;main.c: 17:     {
-{
-"18
-[; ;main.c: 18:         PIR3bits.TMR0IF = 0;
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
 "20
-[; ;main.c: 20:         TMR0H = 0xFC;
-[e = _TMR0H -> -> 252 `i `uc ]
+[; ;main.c: 20:     {
+{
 "21
-[; ;main.c: 21:         TMR0L = 0x00;
-[e = _TMR0L -> -> 0 `i `uc ]
+[; ;main.c: 21:         PIR3bits.TMR0IF = 0;
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
 "23
-[; ;main.c: 23:         LoRaSeconds++;
-[e ++ _LoRaSeconds -> -> 1 `i `Vuc ]
+[; ;main.c: 23:         TMR0H = 0xFE;
+[e = _TMR0H -> -> 254 `i `uc ]
 "24
-[; ;main.c: 24:     }
+[; ;main.c: 24:         TMR0L = 0x00;
+[e = _TMR0L -> -> 0 `i `uc ]
+"26
+[; ;main.c: 26:         LoRaSeconds++;
+[e ++ _LoRaSeconds -> -> 1 `i `Vuc ]
+"28
+[; ;main.c: 28:     }
 }
 [e :U 2254 ]
-"26
-[; ;main.c: 26:     if(PIR0bits.IOCIF)
+"30
+[; ;main.c: 30:     if(PIR0bits.IOCIF)
 [e $ ! != -> . . _PIR0bits 0 7 `i -> 0 `i 2255  ]
-"27
-[; ;main.c: 27:     {
+"31
+[; ;main.c: 31:     {
 {
-"28
-[; ;main.c: 28:         if(IOCBFbits.IOCBF3) { IOCBFbits.IOCBF3 = 0; A_flag = 1; }
+"32
+[; ;main.c: 32:         if(IOCBFbits.IOCBF3)
 [e $ ! != -> . . _IOCBFbits 0 3 `i -> 0 `i 2256  ]
+"33
+[; ;main.c: 33:         {
 {
+"34
+[; ;main.c: 34:             IOCBFbits.IOCBF3 = 0;
 [e = . . _IOCBFbits 0 3 -> -> 0 `i `uc ]
+"35
+[; ;main.c: 35:             A_flag = 1;
 [e = _A_flag -> 1 `i ]
+"36
+[; ;main.c: 36:         }
 }
 [e :U 2256 ]
-"29
-[; ;main.c: 29:         if(IOCBFbits.IOCBF4) { IOCBFbits.IOCBF4 = 0; B_flag = 1; }
+"38
+[; ;main.c: 38:         if(IOCBFbits.IOCBF4)
 [e $ ! != -> . . _IOCBFbits 0 4 `i -> 0 `i 2257  ]
+"39
+[; ;main.c: 39:         {
 {
+"40
+[; ;main.c: 40:             IOCBFbits.IOCBF4 = 0;
 [e = . . _IOCBFbits 0 4 -> -> 0 `i `uc ]
+"41
+[; ;main.c: 41:             B_flag = 1;
 [e = _B_flag -> 1 `i ]
+"42
+[; ;main.c: 42:         }
 }
 [e :U 2257 ]
-"30
-[; ;main.c: 30:         if(IOCBFbits.IOCBF5) { IOCBFbits.IOCBF5 = 0; C_flag = 1; }
+"44
+[; ;main.c: 44:         if(IOCBFbits.IOCBF5)
 [e $ ! != -> . . _IOCBFbits 0 5 `i -> 0 `i 2258  ]
+"45
+[; ;main.c: 45:         {
 {
+"46
+[; ;main.c: 46:             IOCBFbits.IOCBF5 = 0;
 [e = . . _IOCBFbits 0 5 -> -> 0 `i `uc ]
+"47
+[; ;main.c: 47:             C_flag = 1;
 [e = _C_flag -> 1 `i ]
+"48
+[; ;main.c: 48:         }
 }
 [e :U 2258 ]
-"31
-[; ;main.c: 31:         if(IOCBFbits.IOCBF6) { IOCBFbits.IOCBF6 = 0; D_flag = 1; }
+"50
+[; ;main.c: 50:         if(IOCBFbits.IOCBF6)
 [e $ ! != -> . . _IOCBFbits 0 6 `i -> 0 `i 2259  ]
+"51
+[; ;main.c: 51:         {
 {
+"52
+[; ;main.c: 52:             IOCBFbits.IOCBF6 = 0;
 [e = . . _IOCBFbits 0 6 -> -> 0 `i `uc ]
+"53
+[; ;main.c: 53:             D_flag = 1;
 [e = _D_flag -> 1 `i ]
+"54
+[; ;main.c: 54:         }
 }
 [e :U 2259 ]
-"32
-[; ;main.c: 32:         if(IOCBFbits.IOCBF7) { IOCBFbits.IOCBF7 = 0; E_flag = 1; }
+"56
+[; ;main.c: 56:         if(IOCBFbits.IOCBF7)
 [e $ ! != -> . . _IOCBFbits 0 7 `i -> 0 `i 2260  ]
+"57
+[; ;main.c: 57:         {
 {
+"58
+[; ;main.c: 58:             IOCBFbits.IOCBF7 = 0;
 [e = . . _IOCBFbits 0 7 -> -> 0 `i `uc ]
+"59
+[; ;main.c: 59:             E_flag = 1;
 [e = _E_flag -> 1 `i ]
+"60
+[; ;main.c: 60:         }
 }
 [e :U 2260 ]
-"34
-[; ;main.c: 34:         if(IOCCFbits.IOCCF5)
+"62
+[; ;main.c: 62:         if(IOCCFbits.IOCCF5)
 [e $ ! != -> . . _IOCCFbits 0 5 `i -> 0 `i 2261  ]
-"35
-[; ;main.c: 35:         {
+"63
+[; ;main.c: 63:         {
 {
-"36
-[; ;main.c: 36:             IOCCFbits.IOCCF5 = 0;
+"64
+[; ;main.c: 64:             IOCCFbits.IOCCF5 = 0;
 [e = . . _IOCCFbits 0 5 -> -> 0 `i `uc ]
-"37
-[; ;main.c: 37:             rtcWake = 1;
+"65
+[; ;main.c: 65:             rtcWake = 1;
 [e = _rtcWake -> -> 1 `i `a ]
-"38
-[; ;main.c: 38:         }
+"66
+[; ;main.c: 66:         }
 }
 [e :U 2261 ]
-"40
-[; ;main.c: 40:         PIR0bits.IOCIF = 0;
+"68
+[; ;main.c: 68:         PIR0bits.IOCIF = 0;
 [e = . . _PIR0bits 0 7 -> -> 0 `i `uc ]
-"41
-[; ;main.c: 41:     }
+"69
+[; ;main.c: 69:     }
 }
 [e :U 2255 ]
-"42
-[; ;main.c: 42: }
+"70
+[; ;main.c: 70: }
 [e :UE 2253 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"44
-[; ;main.c: 44: int main(void)
+"76
+[; ;main.c: 76: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"45
-[; ;main.c: 45: {
+"77
+[; ;main.c: 77: {
 {
 [e :U _main ]
 [f ]
-"46
-[; ;main.c: 46:     int count = 0;
+"78
+[; ;main.c: 78:     int count = 0;
 [v _count `i ~T0 @X0 1 a ]
 [e = _count -> 0 `i ]
-"47
-[; ;main.c: 47:     int toggle = 0;
+"79
+[; ;main.c: 79:     int toggle = 0;
 [v _toggle `i ~T0 @X0 1 a ]
 [e = _toggle -> 0 `i ]
-"48
-[; ;main.c: 48:     int IRWasHigh = 0;
+"80
+[; ;main.c: 80:     int IRWasHigh = 0;
 [v _IRWasHigh `i ~T0 @X0 1 a ]
 [e = _IRWasHigh -> 0 `i ]
-"49
-[; ;main.c: 49:     int PIR_Reset = 0;
+"81
+[; ;main.c: 81:     int PIR_Reset = 0;
 [v _PIR_Reset `i ~T0 @X0 1 a ]
 [e = _PIR_Reset -> 0 `i ]
-"50
-[; ;main.c: 50:     uint8_t state = 0;
+"83
+[; ;main.c: 83:     uint8_t state = 0;
 [v _state `uc ~T0 @X0 1 a ]
 [e = _state -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51:     char buffer[64];
+"85
+[; ;main.c: 85:     char buffer[64];
 [v _buffer `uc ~T0 @X0 -> 64 `i a ]
-"52
-[; ;main.c: 52:     uint16_t adc = 0;
+"87
+[; ;main.c: 87:     uint16_t adc = 0;
 [v _adc `us ~T0 @X0 1 a ]
 [e = _adc -> -> 0 `i `us ]
-"54
-[; ;main.c: 54:     uint8_t sleepHour = 21;
+"89
+[; ;main.c: 89:     uint8_t sleepHour = 21;
 [v _sleepHour `uc ~T0 @X0 1 a ]
 [e = _sleepHour -> -> 21 `i `uc ]
-"55
-[; ;main.c: 55:     uint8_t sleepMinute = 0;
+"90
+[; ;main.c: 90:     uint8_t sleepMinute = 0;
 [v _sleepMinute `uc ~T0 @X0 1 a ]
 [e = _sleepMinute -> -> 0 `i `uc ]
-"57
-[; ;main.c: 57:     uint8_t wakeHour = 7;
+"92
+[; ;main.c: 92:     uint8_t wakeHour = 7;
 [v _wakeHour `uc ~T0 @X0 1 a ]
 [e = _wakeHour -> -> 7 `i `uc ]
-"58
-[; ;main.c: 58:     uint8_t wakeMinute = 0;
+"93
+[; ;main.c: 93:     uint8_t wakeMinute = 0;
 [v _wakeMinute `uc ~T0 @X0 1 a ]
 [e = _wakeMinute -> -> 0 `i `uc ]
-"60
-[; ;main.c: 60:     uint8_t prevsec = 255;
+"95
+[; ;main.c: 95:     uint8_t prevsec = 255;
 [v _prevsec `uc ~T0 @X0 1 a ]
 [e = _prevsec -> -> 255 `i `uc ]
-"62
-[; ;main.c: 62:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"63
-[; ;main.c: 63:     ADC_Init();
-[e ( _ADC_Init ..  ]
-"65
-[; ;main.c: 65:     VREGCONbits.VREGPM = 1;
-[e = . . _VREGCONbits 0 1 -> -> 1 `i `uc ]
-"67
-[; ;main.c: 67:     ANSELA = 0;
-[e = _ANSELA -> -> 0 `i `uc ]
-"68
-[; ;main.c: 68:     ANSELB = 0;
-[e = _ANSELB -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:     ANSELD = 0;
-[e = _ANSELD -> -> 0 `i `uc ]
-"71
-[; ;main.c: 71:     TRISDbits.TRISD0 = 1;
-[e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     TRISDbits.TRISD2 = 0;
-[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
-"73
-[; ;main.c: 73:     TRISDbits.TRISD3 = 0;
-[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
-"75
-[; ;main.c: 75:     ANSELDbits.ANSELD2 = 0;
-[e = . . _ANSELDbits 0 2 -> -> 0 `i `uc ]
-"76
-[; ;main.c: 76:     ANSELDbits.ANSELD3 = 0;
-[e = . . _ANSELDbits 0 3 -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     TRISAbits.TRISA0 = 0;
-[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
-"79
-[; ;main.c: 79:     LATAbits.LATA0 = 0;
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-"81
-[; ;main.c: 81:     LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"82
-[; ;main.c: 82:     LATDbits.LATD3 = 1;
-[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
-"84
-[; ;main.c: 84:     LoRaState = 0;
-[e = _LoRaState -> -> 0 `i `uc ]
-"85
-[; ;main.c: 85:     LoRaSeconds = 0;
-[e = _LoRaSeconds -> -> 0 `i `uc ]
-"86
-[; ;main.c: 86:     SendMessage = 0;
-[e = _SendMessage -> -> 0 `i `uc ]
-"88
-[; ;main.c: 88:     Timer0_Init();
-[e ( _Timer0_Init ..  ]
-"89
-[; ;main.c: 89:     buttonInit();
-[e ( _buttonInit ..  ]
-"91
-[; ;main.c: 91:     Init_RTC_Interrupt_RC5();
-[e ( _Init_RTC_Interrupt_RC5 ..  ]
-"92
-[; ;main.c: 92:     DS3231_ClearAlarmFlag();
-[e ( _DS3231_ClearAlarmFlag ..  ]
-"93
-[; ;main.c: 93:     _delay((unsigned long)((50)*(64000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"95
-[; ;main.c: 95:     (INTCON0bits.GIE = 1);
-[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
 "97
-[; ;main.c: 97:     while(1)
-[e :U 2264 ]
+[; ;main.c: 97:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "98
-[; ;main.c: 98:     {
-{
-"99
-[; ;main.c: 99:         RTC_UpdateTime();
-[e ( _RTC_UpdateTime ..  ]
-"101
-[; ;main.c: 101:         if(prevsec != sec)
-[e $ ! != -> _prevsec `i -> _sec `i 2266  ]
+[; ;main.c: 98:     ADC_Init();
+[e ( _ADC_Init ..  ]
+"100
+[; ;main.c: 100:     VREGCONbits.VREGPM = 1;
+[e = . . _VREGCONbits 0 1 -> -> 1 `i `uc ]
 "102
-[; ;main.c: 102:         {
-{
+[; ;main.c: 102:     ANSELA = 0;
+[e = _ANSELA -> -> 0 `i `uc ]
+"103
+[; ;main.c: 103:     ANSELB = 0;
+[e = _ANSELB -> -> 0 `i `uc ]
 "104
-[; ;main.c: 104:             prevsec = sec;
-[e = _prevsec _sec ]
-"105
-[; ;main.c: 105:             printf("Time: %02u:%02u:%02u\r\n", hour, min, sec);
-[e ( _printf , , , (. :s 1C -> _hour `i -> _min `i -> _sec `i ]
+[; ;main.c: 104:     ANSELD = 0;
+[e = _ANSELD -> -> 0 `i `uc ]
 "106
-[; ;main.c: 106:             printf("%u\r\n", adc);
-[e ( _printf , (. :s 2C -> _adc `ui ]
+[; ;main.c: 106:     TRISDbits.TRISD0 = 1;
+[e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
 "107
-[; ;main.c: 107:         }
+[; ;main.c: 107:     TRISDbits.TRISD2 = 0;
+[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
+"108
+[; ;main.c: 108:     TRISDbits.TRISD3 = 0;
+[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
+"110
+[; ;main.c: 110:     ANSELDbits.ANSELD2 = 0;
+[e = . . _ANSELDbits 0 2 -> -> 0 `i `uc ]
+"111
+[; ;main.c: 111:     ANSELDbits.ANSELD3 = 0;
+[e = . . _ANSELDbits 0 3 -> -> 0 `i `uc ]
+"113
+[; ;main.c: 113:     TRISAbits.TRISA0 = 0;
+[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+"114
+[; ;main.c: 114:     LATAbits.LATA0 = 0;
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+"116
+[; ;main.c: 116:     LATDbits.LATD2 = 1;
+[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
+"117
+[; ;main.c: 117:     LATDbits.LATD3 = 1;
+[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
+"119
+[; ;main.c: 119:     LoRaState = 0;
+[e = _LoRaState -> -> 0 `i `uc ]
+"120
+[; ;main.c: 120:     LoRaSeconds = 0;
+[e = _LoRaSeconds -> -> 0 `i `uc ]
+"121
+[; ;main.c: 121:     SendMessage = 0;
+[e = _SendMessage -> -> 0 `i `uc ]
+"123
+[; ;main.c: 123:     Timer0_Init();
+[e ( _Timer0_Init ..  ]
+"124
+[; ;main.c: 124:     buttonInit();
+[e ( _buttonInit ..  ]
+"126
+[; ;main.c: 126:     Init_RTC_Interrupt_RC5();
+[e ( _Init_RTC_Interrupt_RC5 ..  ]
+"127
+[; ;main.c: 127:     DS3231_ClearAlarmFlag();
+[e ( _DS3231_ClearAlarmFlag ..  ]
+"128
+[; ;main.c: 128:     _delay((unsigned long)((50)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"130
+[; ;main.c: 130:     (INTCON0bits.GIE = 1);
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"132
+[; ;main.c: 132:     while(1)
+[e :U 2264 ]
+"133
+[; ;main.c: 133:     {
+{
+"135
+[; ;main.c: 135:         RTC_UpdateTime();
+[e ( _RTC_UpdateTime ..  ]
+"137
+[; ;main.c: 137:         if(prevsec != sec){
+[e $ ! != -> _prevsec `i -> _sec `i 2266  ]
+{
+"138
+[; ;main.c: 138:             prevsec = sec;
+[e = _prevsec _sec ]
+"139
+[; ;main.c: 139:             printf("Time: %02u:%02u:%02u\r\n", hour, min, sec);
+[e ( _printf , , , (. :s 1C -> _hour `i -> _min `i -> _sec `i ]
+"140
+[; ;main.c: 140:         }
 }
 [e :U 2266 ]
-"109
-[; ;main.c: 109:         if(
-[e $ ! || || > -> _hour `i -> _sleepHour `i && == -> _hour `i -> _sleepHour `i >= -> _min `i -> _sleepMinute `i || < -> _hour `i -> _wakeHour `i && == -> _hour `i -> _wakeHour `i < -> _min `i -> _wakeMinute `i 2267  ]
-"114
-[; ;main.c: 114:         {
-{
-"115
-[; ;main.c: 115:             LATDbits.LATD3 = 0;
-[e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
-"116
-[; ;main.c: 116:             printf("Sleeping...\r\n");
-[e ( _printf :s 3C ]
-"117
-[; ;main.c: 117:             while(!UART2_IsTxDone());
-[e $U 2268  ]
-[e :U 2269 ]
-[e :U 2268 ]
-[e $ ! != -> ( _UART2_IsTxDone ..  `i -> 0 `i 2269  ]
-[e :U 2270 ]
-"119
-[; ;main.c: 119:             RTC_SleepUntil(wakeHour, wakeMinute, 0);
-[e ( _RTC_SleepUntil (3 , , _wakeHour _wakeMinute -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:             LATDbits.LATD3 = 1;
-[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
-"121
-[; ;main.c: 121:         }
-}
-[e :U 2267 ]
-"130
-[; ;main.c: 130:         if(LoRaState == 0)
-[e $ ! == -> _LoRaState `i -> 0 `i 2271  ]
-"131
-[; ;main.c: 131:         {
-{
-"132
-[; ;main.c: 132:             if(LoRaSeconds >= 5)
-[e $ ! >= -> _LoRaSeconds `i -> 5 `i 2272  ]
-"133
-[; ;main.c: 133:             {
-{
-"134
-[; ;main.c: 134:                 SendMessage = 1;
-[e = _SendMessage -> -> 1 `i `uc ]
-"135
-[; ;main.c: 135:                 LoRaSeconds = 0;
-[e = _LoRaSeconds -> -> 0 `i `uc ]
-"136
-[; ;main.c: 136:                 LoRaState = 1;
-[e = _LoRaState -> -> 1 `i `uc ]
-"137
-[; ;main.c: 137:             }
-}
-[e :U 2272 ]
-"138
-[; ;main.c: 138:         }
-}
-[e $U 2273  ]
-"139
-[; ;main.c: 139:         else if(LoRaState == 1)
-[e :U 2271 ]
-[e $ ! == -> _LoRaState `i -> 1 `i 2274  ]
-"140
-[; ;main.c: 140:         {
-{
-"141
-[; ;main.c: 141:             if(LoRaSeconds >= 20)
-[e $ ! >= -> _LoRaSeconds `i -> 20 `i 2275  ]
-"142
-[; ;main.c: 142:             {
-{
-"143
-[; ;main.c: 143:                 LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"144
-[; ;main.c: 144:                 LoRaSeconds = 0;
-[e = _LoRaSeconds -> -> 0 `i `uc ]
-"145
-[; ;main.c: 145:                 LoRaState = 2;
-[e = _LoRaState -> -> 2 `i `uc ]
-"146
-[; ;main.c: 146:             }
-}
-[e :U 2275 ]
-"147
-[; ;main.c: 147:         }
-}
-[e $U 2276  ]
-"148
-[; ;main.c: 148:         else if(LoRaState == 2)
-[e :U 2274 ]
-[e $ ! == -> _LoRaState `i -> 2 `i 2277  ]
-"149
-[; ;main.c: 149:         {
-{
-"150
-[; ;main.c: 150:             if(LoRaSeconds >= 20)
-[e $ ! >= -> _LoRaSeconds `i -> 20 `i 2278  ]
-"151
-[; ;main.c: 151:             {
-{
-"152
-[; ;main.c: 152:                 LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"153
-[; ;main.c: 153:                 LoRaSeconds = 0;
-[e = _LoRaSeconds -> -> 0 `i `uc ]
-"154
-[; ;main.c: 154:                 LoRaState = 0;
-[e = _LoRaState -> -> 0 `i `uc ]
-"155
-[; ;main.c: 155:             }
-}
-[e :U 2278 ]
 "156
-[; ;main.c: 156:         }
-}
-[e :U 2277 ]
-[e :U 2276 ]
-[e :U 2273 ]
+[; ;main.c: 156:         if(LoRaState == 0)
+[e $ ! == -> _LoRaState `i -> 0 `i 2267  ]
+"157
+[; ;main.c: 157:         {
+{
 "158
-[; ;main.c: 158:         if(SendMessage)
-[e $ ! != -> _SendMessage `i -> 0 `i 2279  ]
+[; ;main.c: 158:             if(LoRaSeconds >= 5)
+[e $ ! >= -> _LoRaSeconds `i -> 5 `i 2268  ]
 "159
-[; ;main.c: 159:         {
+[; ;main.c: 159:             {
 {
 "160
-[; ;main.c: 160:             SendMessage = 0;
-[e = _SendMessage -> -> 0 `i `uc ]
+[; ;main.c: 160:                 SendMessage = 1;
+[e = _SendMessage -> -> 1 `i `uc ]
 "162
-[; ;main.c: 162:             sprintf(buffer,
-[e ( _sprintf (1 , , , , , , (. , &U _buffer :s 4C _count _A _B _C _D _E ]
-"171
-[; ;main.c: 171:             UART_SendString(buffer);
-[e ( _UART_SendString (1 -> &U _buffer `*Cuc ]
-"172
-[; ;main.c: 172:         }
+[; ;main.c: 162:                 LoRaSeconds = 0;
+[e = _LoRaSeconds -> -> 0 `i `uc ]
+"164
+[; ;main.c: 164:                 LoRaState = 1;
+[e = _LoRaState -> -> 1 `i `uc ]
+"165
+[; ;main.c: 165:             }
 }
-[e :U 2279 ]
-"174
-[; ;main.c: 174:         if(UART1_IsRxReady())
-[e $ ! != -> ( _UART1_IsRxReady ..  `i -> 0 `i 2280  ]
-"175
-[; ;main.c: 175:         {
+[e :U 2268 ]
+"166
+[; ;main.c: 166:         }
+}
+[e :U 2267 ]
+"168
+[; ;main.c: 168:         if(LoRaState == 1)
+[e $ ! == -> _LoRaState `i -> 1 `i 2269  ]
+"169
+[; ;main.c: 169:         {
 {
+"170
+[; ;main.c: 170:             if(LoRaSeconds >= 20)
+[e $ ! >= -> _LoRaSeconds `i -> 20 `i 2270  ]
+"171
+[; ;main.c: 171:             {
+{
+"172
+[; ;main.c: 172:                 LATDbits.LATD2 = 0;
+[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
+"174
+[; ;main.c: 174:                 LoRaSeconds = 0;
+[e = _LoRaSeconds -> -> 0 `i `uc ]
 "176
-[; ;main.c: 176:             char c = UART1_Read();
+[; ;main.c: 176:                 LoRaState = 2;
+[e = _LoRaState -> -> 2 `i `uc ]
+"177
+[; ;main.c: 177:             }
+}
+[e :U 2270 ]
+"178
+[; ;main.c: 178:         }
+}
+[e :U 2269 ]
+"180
+[; ;main.c: 180:         if(LoRaState == 2)
+[e $ ! == -> _LoRaState `i -> 2 `i 2271  ]
+"181
+[; ;main.c: 181:         {
+{
+"182
+[; ;main.c: 182:             if(LoRaSeconds >= 60)
+[e $ ! >= -> _LoRaSeconds `i -> 60 `i 2272  ]
+"183
+[; ;main.c: 183:             {
+{
+"184
+[; ;main.c: 184:                 LATDbits.LATD2 = 1;
+[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
+"186
+[; ;main.c: 186:                 LoRaSeconds = 0;
+[e = _LoRaSeconds -> -> 0 `i `uc ]
+"188
+[; ;main.c: 188:                 LoRaState = 0;
+[e = _LoRaState -> -> 0 `i `uc ]
+"189
+[; ;main.c: 189:             }
+}
+[e :U 2272 ]
+"190
+[; ;main.c: 190:         }
+}
+[e :U 2271 ]
+"192
+[; ;main.c: 192:         if(SendMessage)
+[e $ ! != -> _SendMessage `i -> 0 `i 2273  ]
+"193
+[; ;main.c: 193:         {
+{
+"194
+[; ;main.c: 194:             SendMessage = 0;
+[e = _SendMessage -> -> 0 `i `uc ]
+"196
+[; ;main.c: 196:             sprintf(
+[e ( _sprintf (1 , , , , , , (. , &U _buffer :s 2C _count _A _B _C _D _E ]
+"207
+[; ;main.c: 207:             UART_SendString(buffer);
+[e ( _UART_SendString (1 -> &U _buffer `*Cuc ]
+"208
+[; ;main.c: 208:         }
+}
+[e :U 2273 ]
+"215
+[; ;main.c: 215:         if(UART1_IsRxReady())
+[e $ ! != -> ( _UART1_IsRxReady ..  `i -> 0 `i 2274  ]
+"216
+[; ;main.c: 216:         {
+{
+"217
+[; ;main.c: 217:             char c = UART1_Read();
 [v _c `uc ~T0 @X0 1 a ]
 [e = _c -> ( _UART1_Read ..  `uc ]
-"178
-[; ;main.c: 178:             switch(state)
-[e $U 2282  ]
-"179
-[; ;main.c: 179:             {
+"219
+[; ;main.c: 219:             switch(state)
+[e $U 2276  ]
+"220
+[; ;main.c: 220:             {
 {
-"180
-[; ;main.c: 180:                 case 0:
-[e :U 2283 ]
-"181
-[; ;main.c: 181:                     if(c == 'L')
-[e $ ! == -> _c `ui -> 76 `ui 2284  ]
-"182
-[; ;main.c: 182:                         state = 1;
+"221
+[; ;main.c: 221:                 case 0:
+[e :U 2277 ]
+"223
+[; ;main.c: 223:                     if(c == 'L')
+[e $ ! == -> _c `ui -> 76 `ui 2278  ]
+"224
+[; ;main.c: 224:                         state = 1;
 [e = _state -> -> 1 `i `uc ]
-[e :U 2284 ]
-"183
-[; ;main.c: 183:                     break;
-[e $U 2281  ]
-"185
-[; ;main.c: 185:                 case 1:
-[e :U 2285 ]
-"186
-[; ;main.c: 186:                     if(c == 'E')
-[e $ ! == -> _c `ui -> 69 `ui 2286  ]
-"187
-[; ;main.c: 187:                         state = 2;
+[e :U 2278 ]
+"226
+[; ;main.c: 226:                     break;
+[e $U 2275  ]
+"228
+[; ;main.c: 228:                 case 1:
+[e :U 2279 ]
+"230
+[; ;main.c: 230:                     if(c == 'E')
+[e $ ! == -> _c `ui -> 69 `ui 2280  ]
+"231
+[; ;main.c: 231:                         state = 2;
 [e = _state -> -> 2 `i `uc ]
-[e $U 2287  ]
-"188
-[; ;main.c: 188:                     else if(c == 'L')
-[e :U 2286 ]
-[e $ ! == -> _c `ui -> 76 `ui 2288  ]
-"189
-[; ;main.c: 189:                         state = 1;
-[e = _state -> -> 1 `i `uc ]
-[e $U 2289  ]
-"190
-[; ;main.c: 190:                     else
-[e :U 2288 ]
-"191
-[; ;main.c: 191:                         state = 0;
-[e = _state -> -> 0 `i `uc ]
-[e :U 2289 ]
-[e :U 2287 ]
-"192
-[; ;main.c: 192:                     break;
 [e $U 2281  ]
-"194
-[; ;main.c: 194:                 case 2:
-[e :U 2290 ]
-"195
-[; ;main.c: 195:                     if(c == 'D')
-[e $ ! == -> _c `ui -> 68 `ui 2291  ]
-"196
-[; ;main.c: 196:                     {
+"233
+[; ;main.c: 233:                     else if(c == 'L')
+[e :U 2280 ]
+[e $ ! == -> _c `ui -> 76 `ui 2282  ]
+"234
+[; ;main.c: 234:                         state = 1;
+[e = _state -> -> 1 `i `uc ]
+[e $U 2283  ]
+"236
+[; ;main.c: 236:                     else
+[e :U 2282 ]
+"237
+[; ;main.c: 237:                         state = 0;
+[e = _state -> -> 0 `i `uc ]
+[e :U 2283 ]
+[e :U 2281 ]
+"239
+[; ;main.c: 239:                     break;
+[e $U 2275  ]
+"241
+[; ;main.c: 241:                 case 2:
+[e :U 2284 ]
+"243
+[; ;main.c: 243:                     if(c == 'D')
+[e $ ! == -> _c `ui -> 68 `ui 2285  ]
+"244
+[; ;main.c: 244:                     {
 {
-"197
-[; ;main.c: 197:                         count = 0;
+"247
+[; ;main.c: 247:                         count = 0;
 [e = _count -> 0 `i ]
-"198
-[; ;main.c: 198:                         A = 0;
+"249
+[; ;main.c: 249:                         A = 0;
 [e = _A -> 0 `i ]
-"199
-[; ;main.c: 199:                         B = 0;
+"250
+[; ;main.c: 250:                         B = 0;
 [e = _B -> 0 `i ]
-"200
-[; ;main.c: 200:                         C = 0;
+"251
+[; ;main.c: 251:                         C = 0;
 [e = _C -> 0 `i ]
-"201
-[; ;main.c: 201:                         D = 0;
+"252
+[; ;main.c: 252:                         D = 0;
 [e = _D -> 0 `i ]
-"202
-[; ;main.c: 202:                         E = 0;
+"253
+[; ;main.c: 253:                         E = 0;
 [e = _E -> 0 `i ]
-"204
-[; ;main.c: 204:                         IRWasHigh = 0;
+"257
+[; ;main.c: 257:                         IRWasHigh = 0;
 [e = _IRWasHigh -> 0 `i ]
-"205
-[; ;main.c: 205:                         PIR_Reset = 1;
+"258
+[; ;main.c: 258:                         PIR_Reset = 1;
 [e = _PIR_Reset -> 1 `i ]
-"206
-[; ;main.c: 206:                     }
+"259
+[; ;main.c: 259:                     }
+}
+[e :U 2285 ]
+"261
+[; ;main.c: 261:                     state = 0;
+[e = _state -> -> 0 `i `uc ]
+"263
+[; ;main.c: 263:                     break;
+[e $U 2275  ]
+"265
+[; ;main.c: 265:                 default:
+[e :U 2286 ]
+"267
+[; ;main.c: 267:                     state = 0;
+[e = _state -> -> 0 `i `uc ]
+"269
+[; ;main.c: 269:                     break;
+[e $U 2275  ]
+"270
+[; ;main.c: 270:             }
+}
+[e $U 2275  ]
+[e :U 2276 ]
+[e [\ _state , $ -> 0 `i 2277
+ , $ -> 1 `i 2279
+ , $ -> 2 `i 2284
+ 2286 ]
+[e :U 2275 ]
+"271
+[; ;main.c: 271:         }
+}
+[e :U 2274 ]
+"277
+[; ;main.c: 277:         if(PIR_Reset == 1)
+[e $ ! == _PIR_Reset -> 1 `i 2287  ]
+"278
+[; ;main.c: 278:         {
+{
+"281
+[; ;main.c: 281:             LATAbits.LATA0 = 0;
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+"283
+[; ;main.c: 283:             if(PORTDbits.RD0 == 0)
+[e $ ! == -> . . _PORTDbits 0 0 `i -> 0 `i 2288  ]
+"284
+[; ;main.c: 284:             {
+{
+"285
+[; ;main.c: 285:                 PIR_Reset = 0;
+[e = _PIR_Reset -> 0 `i ]
+"286
+[; ;main.c: 286:                 IRWasHigh = 0;
+[e = _IRWasHigh -> 0 `i ]
+"287
+[; ;main.c: 287:             }
+}
+[e :U 2288 ]
+"288
+[; ;main.c: 288:         }
+}
+[e $U 2289  ]
+"289
+[; ;main.c: 289:         else
+[e :U 2287 ]
+"290
+[; ;main.c: 290:         {
+{
+"291
+[; ;main.c: 291:             if(PORTDbits.RD0 == 1)
+[e $ ! == -> . . _PORTDbits 0 0 `i -> 1 `i 2290  ]
+"292
+[; ;main.c: 292:             {
+{
+"293
+[; ;main.c: 293:                 LATAbits.LATA0 = 1;
+[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+"295
+[; ;main.c: 295:                 IRWasHigh = 1;
+[e = _IRWasHigh -> 1 `i ]
+"296
+[; ;main.c: 296:             }
+}
+[e $U 2291  ]
+"297
+[; ;main.c: 297:             else
+[e :U 2290 ]
+"298
+[; ;main.c: 298:             {
+{
+"299
+[; ;main.c: 299:                 LATAbits.LATA0 = 0;
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+"301
+[; ;main.c: 301:                 if(IRWasHigh == 1)
+[e $ ! == _IRWasHigh -> 1 `i 2292  ]
+"302
+[; ;main.c: 302:                 {
+{
+"303
+[; ;main.c: 303:                     count++;
+[e ++ _count -> 1 `i ]
+"305
+[; ;main.c: 305:                     IRWasHigh = 0;
+[e = _IRWasHigh -> 0 `i ]
+"306
+[; ;main.c: 306:                 }
+}
+[e :U 2292 ]
+"307
+[; ;main.c: 307:             }
 }
 [e :U 2291 ]
-"208
-[; ;main.c: 208:                     state = 0;
-[e = _state -> -> 0 `i `uc ]
-"209
-[; ;main.c: 209:                     break;
-[e $U 2281  ]
-"211
-[; ;main.c: 211:                 default:
-[e :U 2292 ]
-"212
-[; ;main.c: 212:                     state = 0;
-[e = _state -> -> 0 `i `uc ]
-"213
-[; ;main.c: 213:                     break;
-[e $U 2281  ]
-"214
-[; ;main.c: 214:             }
+"308
+[; ;main.c: 308:         }
 }
-[e $U 2281  ]
-[e :U 2282 ]
-[e [\ _state , $ -> 0 `i 2283
- , $ -> 1 `i 2285
- , $ -> 2 `i 2290
- 2292 ]
-[e :U 2281 ]
-"215
-[; ;main.c: 215:         }
-}
-[e :U 2280 ]
-"217
-[; ;main.c: 217:         if(PIR_Reset == 1)
-[e $ ! == _PIR_Reset -> 1 `i 2293  ]
-"218
-[; ;main.c: 218:         {
-{
-"219
-[; ;main.c: 219:             LATAbits.LATA0 = 0;
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-"221
-[; ;main.c: 221:             if(PORTDbits.RD0 == 0)
-[e $ ! == -> . . _PORTDbits 0 0 `i -> 0 `i 2294  ]
-"222
-[; ;main.c: 222:             {
-{
-"223
-[; ;main.c: 223:                 PIR_Reset = 0;
-[e = _PIR_Reset -> 0 `i ]
-"224
-[; ;main.c: 224:                 IRWasHigh = 0;
-[e = _IRWasHigh -> 0 `i ]
-"225
-[; ;main.c: 225:             }
-}
-[e :U 2294 ]
-"226
-[; ;main.c: 226:         }
-}
-[e $U 2295  ]
-"227
-[; ;main.c: 227:         else
-[e :U 2293 ]
-"228
-[; ;main.c: 228:         {
-{
-"229
-[; ;main.c: 229:             if(PORTDbits.RD0 == 1)
-[e $ ! == -> . . _PORTDbits 0 0 `i -> 1 `i 2296  ]
-"230
-[; ;main.c: 230:             {
-{
-"231
-[; ;main.c: 231:                 LATAbits.LATA0 = 1;
-[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-"232
-[; ;main.c: 232:                 IRWasHigh = 1;
-[e = _IRWasHigh -> 1 `i ]
-"233
-[; ;main.c: 233:             }
-}
-[e $U 2297  ]
-"234
-[; ;main.c: 234:             else
-[e :U 2296 ]
-"235
-[; ;main.c: 235:             {
-{
-"236
-[; ;main.c: 236:                 LATAbits.LATA0 = 0;
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-"238
-[; ;main.c: 238:                 if(IRWasHigh == 1)
-[e $ ! == _IRWasHigh -> 1 `i 2298  ]
-"239
-[; ;main.c: 239:                 {
-{
-"240
-[; ;main.c: 240:                     count++;
-[e ++ _count -> 1 `i ]
-"241
-[; ;main.c: 241:                     IRWasHigh = 0;
-[e = _IRWasHigh -> 0 `i ]
-"242
-[; ;main.c: 242:                 }
-}
-[e :U 2298 ]
-"243
-[; ;main.c: 243:             }
-}
-[e :U 2297 ]
-"244
-[; ;main.c: 244:         }
-}
-[e :U 2295 ]
-"246
-[; ;main.c: 246:         buttonTask();
+[e :U 2289 ]
+"314
+[; ;main.c: 314:         buttonTask();
 [e ( _buttonTask ..  ]
-"247
-[; ;main.c: 247:         int targetsec = 0;
-[v _targetsec `i ~T0 @X0 1 a ]
-[e = _targetsec -> 0 `i ]
-"248
-[; ;main.c: 248:         if (min == 0 && toggle == 0){
-[e $ ! && == -> _min `i -> 0 `i == _toggle -> 0 `i 2299  ]
-{
-"249
-[; ;main.c: 249:             toggle = 1;
-[e = _toggle -> 1 `i ]
-"250
-[; ;main.c: 250:             adc = ADC_Read();
-[e = _adc ( _ADC_Read ..  ]
-"251
-[; ;main.c: 251:                 sprintf(buffer,"Gate_01,%d,%d,%d,%d,%d,%d,%02u\r\n",count,A,B,C,D,E,adc);
-[e ( _sprintf (1 , , , , , , , (. , &U _buffer :s 5C _count _A _B _C _D _E -> _adc `ui ]
-"252
-[; ;main.c: 252:                 if(adc >= 1310)
-[e $ ! >= -> _adc `ui -> -> 1310 `i `ui 2300  ]
-"253
-[; ;main.c: 253:                 {
-{
-"254
-[; ;main.c: 254:                     LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"255
-[; ;main.c: 255:                     if (sec > 52){
-[e $ ! > -> _sec `i -> 52 `i 2301  ]
-{
-"256
-[; ;main.c: 256:                         targetsec = sec - 52;
-[e = _targetsec - -> _sec `i -> 52 `i ]
-"257
-[; ;main.c: 257:                     }
-}
-[e $U 2302  ]
-"258
-[; ;main.c: 258:                     else{
-[e :U 2301 ]
-{
-"259
-[; ;main.c: 259:                         targetsec = sec + 8;
-[e = _targetsec + -> _sec `i -> 8 `i ]
-"260
-[; ;main.c: 260:                     }
-}
-[e :U 2302 ]
-"261
-[; ;main.c: 261:                     while(sec != targetsec){
-[e $U 2303  ]
-[e :U 2304 ]
-{
-"263
-[; ;main.c: 263:                     }
-}
-[e :U 2303 ]
-"261
-[; ;main.c: 261:                     while(sec != targetsec){
-[e $ != -> _sec `i _targetsec 2304  ]
-[e :U 2305 ]
-"264
-[; ;main.c: 264:                     UART_SendString(buffer);
-[e ( _UART_SendString (1 -> &U _buffer `*Cuc ]
-"265
-[; ;main.c: 265:                     RTC_UpdateTime();
-[e ( _RTC_UpdateTime ..  ]
-"266
-[; ;main.c: 266:                     if (sec > 52){
-[e $ ! > -> _sec `i -> 52 `i 2306  ]
-{
-"267
-[; ;main.c: 267:                         targetsec = sec - 52;
-[e = _targetsec - -> _sec `i -> 52 `i ]
-"268
-[; ;main.c: 268:                     }
-}
-[e $U 2307  ]
-"269
-[; ;main.c: 269:                     else{
-[e :U 2306 ]
-{
-"270
-[; ;main.c: 270:                         targetsec = sec + 8;
-[e = _targetsec + -> _sec `i -> 8 `i ]
-"271
-[; ;main.c: 271:                     }
-}
-[e :U 2307 ]
-"272
-[; ;main.c: 272:                     while(sec != targetsec){
-[e $U 2308  ]
-[e :U 2309 ]
-{
-"274
-[; ;main.c: 274:                     }
-}
-[e :U 2308 ]
-"272
-[; ;main.c: 272:                     while(sec != targetsec){
-[e $ != -> _sec `i _targetsec 2309  ]
-[e :U 2310 ]
-"275
-[; ;main.c: 275:                     LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"276
-[; ;main.c: 276:                 }
-}
-[e :U 2300 ]
-"277
-[; ;main.c: 277:         }
-}
-[e :U 2299 ]
-"278
-[; ;main.c: 278:         if (min != 0 && toggle == 1){
-[e $ ! && != -> _min `i -> 0 `i == _toggle -> 1 `i 2311  ]
-{
-"279
-[; ;main.c: 279:             toggle = 0;
-[e = _toggle -> 0 `i ]
-"280
-[; ;main.c: 280:         }
-}
-[e :U 2311 ]
-"281
-[; ;main.c: 281:     }
+"315
+[; ;main.c: 315:     }
 }
 [e :U 2263 ]
 [e $U 2264  ]
 [e :U 2265 ]
-"282
-[; ;main.c: 282: }
+"316
+[; ;main.c: 316: }
 [e :UE 2262 ]
 }
 [p f _printf 8422404 ]
-[p f _sprintf 8422532 ]
+[p f _sprintf 8388736 ]
 [a 1C 84 105 109 101 58 32 37 48 50 117 58 37 48 50 117 58 37 48 50 117 13 10 0 ]
-[a 5C 71 97 116 101 95 48 49 44 37 100 44 37 100 44 37 100 44 37 100 44 37 100 44 37 100 44 37 48 50 117 13 10 0 ]
-[a 2C 37 117 13 10 0 ]
-[a 4C 71 97 116 101 95 48 49 44 37 100 44 37 100 44 37 100 44 37 100 44 37 100 44 37 100 13 10 0 ]
-[a 3C 83 108 101 101 112 105 110 103 46 46 46 13 10 0 ]
+[a 2C 71 97 116 101 95 48 49 44 37 100 44 37 100 44 37 100 44 37 100 44 37 100 44 37 100 13 10 0 ]
