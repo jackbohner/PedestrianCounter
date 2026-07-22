@@ -27563,6 +27563,8 @@ volatile uint8_t LoRaState = 0;
 volatile uint8_t LoRaSeconds = 0;
 volatile uint8_t SendMessage = 0;
 
+volatile uint8_t RTCReadFlag = 0;
+
 
 
 
@@ -27578,6 +27580,8 @@ void __attribute__((picinterrupt(("irq(default), base(8)")))) ISR(void)
 
         LoRaSeconds++;
 
+
+        RTCReadFlag = 1;
     }
 
     if(PIR0bits.IOCIF)
@@ -27660,6 +27664,7 @@ int main(void)
     TRISDbits.TRISD2 = 0;
     TRISDbits.TRISD3 = 0;
 
+    ANSELDbits.ANSELD0 = 0;
     ANSELDbits.ANSELD2 = 0;
     ANSELDbits.ANSELD3 = 0;
 
@@ -27685,13 +27690,17 @@ int main(void)
     while(1)
     {
 
-        RTC_UpdateTime();
+        if(RTCReadFlag)
+        {
+            RTCReadFlag = 0;
+            RTC_UpdateTime();
+        }
 
         if(prevsec != sec){
             prevsec = sec;
             printf("Time: %02u:%02u:%02u\r\n", hour, min, sec);
         }
-# 156 "main.c"
+# 165 "main.c"
         if(LoRaState == 0)
         {
             if(LoRaSeconds >= 5)
