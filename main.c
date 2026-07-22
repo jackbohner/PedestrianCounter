@@ -90,13 +90,21 @@ int main(void)
 
     uint16_t adc = 0;
 
-    uint8_t sleepHour = 21;
-    uint8_t sleepMinute = 0;
+    uint8_t sleepHour = 0;
+    uint8_t sleepMinute = 1;
 
-    uint8_t wakeHour = 7;
-    uint8_t wakeMinute = 0;
+    uint8_t wakeHour = 0;
+    uint8_t wakeMinute = 37;
 
     uint8_t prevsec = 255;
+    int loraStart;
+    int currentTime;
+    bool loraminSet = 0;
+    
+    bool waiting5Sec = false;
+    uint8_t startSec = 0;
+    
+    
 
     SYSTEM_Initialize();
     ADC_Init();
@@ -133,35 +141,64 @@ int main(void)
     __delay_ms(50);
 
     INTERRUPT_GlobalInterruptEnable();
+    
+    RTC_SetTime(0, 0, 0);
 
     while(1)
     {
        
+
+        RTC_UpdateTime();
+        /*
         if(RTCReadFlag)
         {
             RTCReadFlag = 0;
             RTC_UpdateTime();
         }
+        */
+        if(!loraminSet)
+        {
+            loraStart = hour * 60 + min;
+            loraminSet = 1;
+        }
+
+        currentTime = hour * 60 + min;
+
+        if(currentTime < loraStart)
+        {
+            currentTime += 24 * 60;
+        }
+
+        if(currentTime - loraStart >= 1)
+        {
+            
+            UART_SendString("hello");
+            loraStart = hour * 60 + min;
+        }
+        
+        
+        
+        
         
         if(prevsec != sec){
             prevsec = sec;
             printf("Time: %02u:%02u:%02u\r\n", hour, min, sec);
         }
-      /*
+      
         if(
             (hour > sleepHour || (hour == sleepHour && min >= sleepMinute))
-            ||
+            &&
             (hour < wakeHour || (hour == wakeHour && min < wakeMinute))
         )
         {
-            LATDbits.LATD3 = 0;
+            LATDbits.LATD2 = 0;
             printf("Sleeping");
             RTC_SleepUntil(wakeHour, wakeMinute, 0);
-            LATDbits.LATD3 = 1;
+            LATDbits.LATD2 = 1;
         }
         
-        */
         
+       /*
         if(LoRaState == 0)
         {
             if(LoRaSeconds >= 5)
@@ -321,5 +358,6 @@ int main(void)
         // =================================================
 
         buttonTask();
+        */
     }
 }

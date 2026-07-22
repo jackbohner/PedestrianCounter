@@ -190,62 +190,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47062
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h: 47062: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x3FD2)));
 [v _INTCON0bits `VS2137 ~T0 @X0 0 e@16338 ]
-"49 ./functions.h
+"52 ./functions.h
+[; ;./functions.h: 52: _Bool RTC_SetTime(uint8_t setHour, uint8_t setMin, uint8_t setSec);
+[v _RTC_SetTime `(a ~T0 @X0 0 ef3`uc`uc`uc ]
+"49
 [; ;./functions.h: 49: _Bool RTC_UpdateTime(void);
 [v _RTC_UpdateTime `(a ~T0 @X0 0 ef ]
+"12
+[; ;./functions.h: 12: extern uint8_t hour;
+[v _hour `uc ~T0 @X0 0 e ]
+"13
+[; ;./functions.h: 13: extern uint8_t min;
+[v _min `uc ~T0 @X0 0 e ]
+"54
+[; ;./functions.h: 54: void UART_SendString(const char *str);
+[v _UART_SendString `(v ~T0 @X0 0 ef1`*Cuc ]
 "14
 [; ;./functions.h: 14: extern uint8_t sec;
 [v _sec `uc ~T0 @X0 0 e ]
 "117 /Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h
 [; ;/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h: 117: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"12 ./functions.h
-[; ;./functions.h: 12: extern uint8_t hour;
-[v _hour `uc ~T0 @X0 0 e ]
-"13
-[; ;./functions.h: 13: extern uint8_t min;
-[v _min `uc ~T0 @X0 0 e ]
-"121 /Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h
-[; ;/Applications/microchip/xc8/v3.10/pic/include/c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"22 ./functions.h
-[; ;./functions.h: 22: extern int A;
-[v _A `i ~T0 @X0 0 e ]
-"23
-[; ;./functions.h: 23: extern int B;
-[v _B `i ~T0 @X0 0 e ]
-"24
-[; ;./functions.h: 24: extern int C;
-[v _C `i ~T0 @X0 0 e ]
-"25
-[; ;./functions.h: 25: extern int D;
-[v _D `i ~T0 @X0 0 e ]
-"26
-[; ;./functions.h: 26: extern int E;
-[v _E `i ~T0 @X0 0 e ]
-"54
-[; ;./functions.h: 54: void UART_SendString(const char *str);
-[v _UART_SendString `(v ~T0 @X0 0 ef1`*Cuc ]
-"209 ./mcc_generated_files/system/../uart/uart1.h
-[; ;./mcc_generated_files/system/../uart/uart1.h: 209: _Bool UART1_IsRxReady(void);
-[v _UART1_IsRxReady `(a ~T0 @X0 0 ef ]
-"247
-[; ;./mcc_generated_files/system/../uart/uart1.h: 247: uint8_t UART1_Read(void);
-[v _UART1_Read `(uc ~T0 @X0 0 ef ]
-"46948 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h
-[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h: 46948:     struct {
-[s S2134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2134 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"46947
-[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h: 46947: typedef union {
-[u S2133 `S2134 1 ]
-[n S2133 . . ]
-"46959
-[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h: 46959: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x3FCD)));
-[v _PORTDbits `VS2133 ~T0 @X0 0 e@16333 ]
-"29 ./functions.h
-[; ;./functions.h: 29: void buttonTask(void);
-[v _buttonTask `(v ~T0 @X0 0 ef ]
+"51 ./functions.h
+[; ;./functions.h: 51: void RTC_SleepUntil(uint8_t wakeHour, uint8_t wakeMin, uint8_t wakeSec);
+[v _RTC_SleepUntil `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "250 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f47k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2680,464 +2648,225 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _adc `us ~T0 @X0 1 a ]
 [e = _adc -> -> 0 `i `us ]
 "93
-[; ;main.c: 93:     uint8_t sleepHour = 21;
+[; ;main.c: 93:     uint8_t sleepHour = 0;
 [v _sleepHour `uc ~T0 @X0 1 a ]
-[e = _sleepHour -> -> 21 `i `uc ]
+[e = _sleepHour -> -> 0 `i `uc ]
 "94
-[; ;main.c: 94:     uint8_t sleepMinute = 0;
+[; ;main.c: 94:     uint8_t sleepMinute = 1;
 [v _sleepMinute `uc ~T0 @X0 1 a ]
-[e = _sleepMinute -> -> 0 `i `uc ]
+[e = _sleepMinute -> -> 1 `i `uc ]
 "96
-[; ;main.c: 96:     uint8_t wakeHour = 7;
+[; ;main.c: 96:     uint8_t wakeHour = 0;
 [v _wakeHour `uc ~T0 @X0 1 a ]
-[e = _wakeHour -> -> 7 `i `uc ]
+[e = _wakeHour -> -> 0 `i `uc ]
 "97
-[; ;main.c: 97:     uint8_t wakeMinute = 0;
+[; ;main.c: 97:     uint8_t wakeMinute = 37;
 [v _wakeMinute `uc ~T0 @X0 1 a ]
-[e = _wakeMinute -> -> 0 `i `uc ]
+[e = _wakeMinute -> -> 37 `i `uc ]
 "99
 [; ;main.c: 99:     uint8_t prevsec = 255;
 [v _prevsec `uc ~T0 @X0 1 a ]
 [e = _prevsec -> -> 255 `i `uc ]
+"100
+[; ;main.c: 100:     int loraStart;
+[v _loraStart `i ~T0 @X0 1 a ]
 "101
-[; ;main.c: 101:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 101:     int currentTime;
+[v _currentTime `i ~T0 @X0 1 a ]
 "102
-[; ;main.c: 102:     ADC_Init();
-[e ( _ADC_Init ..  ]
+[; ;main.c: 102:     _Bool loraminSet = 0;
+[v _loraminSet `a ~T0 @X0 1 a ]
+[e = _loraminSet -> -> 0 `i `a ]
 "104
-[; ;main.c: 104:     VREGCONbits.VREGPM = 1;
-[e = . . _VREGCONbits 0 1 -> -> 1 `i `uc ]
-"106
-[; ;main.c: 106:     ANSELA = 0;
-[e = _ANSELA -> -> 0 `i `uc ]
-"107
-[; ;main.c: 107:     ANSELB = 0;
-[e = _ANSELB -> -> 0 `i `uc ]
-"108
-[; ;main.c: 108:     ANSELD = 0;
-[e = _ANSELD -> -> 0 `i `uc ]
+[; ;main.c: 104:     _Bool waiting5Sec = 0;
+[v _waiting5Sec `a ~T0 @X0 1 a ]
+[e = _waiting5Sec -> -> 0 `i `a ]
+"105
+[; ;main.c: 105:     uint8_t startSec = 0;
+[v _startSec `uc ~T0 @X0 1 a ]
+[e = _startSec -> -> 0 `i `uc ]
+"109
+[; ;main.c: 109:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "110
-[; ;main.c: 110:     TRISDbits.TRISD0 = 1;
-[e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
-"111
-[; ;main.c: 111:     TRISDbits.TRISD2 = 0;
-[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 110:     ADC_Init();
+[e ( _ADC_Init ..  ]
 "112
-[; ;main.c: 112:     TRISDbits.TRISD3 = 0;
-[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 112:     VREGCONbits.VREGPM = 1;
+[e = . . _VREGCONbits 0 1 -> -> 1 `i `uc ]
 "114
-[; ;main.c: 114:     ANSELDbits.ANSELD0 = 0;
-[e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 114:     ANSELA = 0;
+[e = _ANSELA -> -> 0 `i `uc ]
 "115
-[; ;main.c: 115:     ANSELDbits.ANSELD2 = 0;
-[e = . . _ANSELDbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 115:     ANSELB = 0;
+[e = _ANSELB -> -> 0 `i `uc ]
 "116
-[; ;main.c: 116:     ANSELDbits.ANSELD3 = 0;
-[e = . . _ANSELDbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 116:     ANSELD = 0;
+[e = _ANSELD -> -> 0 `i `uc ]
 "118
-[; ;main.c: 118:     TRISAbits.TRISA0 = 0;
-[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 118:     TRISDbits.TRISD0 = 1;
+[e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
 "119
-[; ;main.c: 119:     LATAbits.LATA0 = 0;
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-"121
-[; ;main.c: 121:     LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 119:     TRISDbits.TRISD2 = 0;
+[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
+"120
+[; ;main.c: 120:     TRISDbits.TRISD3 = 0;
+[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
 "122
-[; ;main.c: 122:     LATDbits.LATD3 = 1;
-[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 122:     ANSELDbits.ANSELD0 = 0;
+[e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
+"123
+[; ;main.c: 123:     ANSELDbits.ANSELD2 = 0;
+[e = . . _ANSELDbits 0 2 -> -> 0 `i `uc ]
 "124
-[; ;main.c: 124:     LoRaState = 0;
-[e = _LoRaState -> -> 0 `i `uc ]
-"125
-[; ;main.c: 125:     LoRaSeconds = 0;
-[e = _LoRaSeconds -> -> 0 `i `uc ]
+[; ;main.c: 124:     ANSELDbits.ANSELD3 = 0;
+[e = . . _ANSELDbits 0 3 -> -> 0 `i `uc ]
 "126
-[; ;main.c: 126:     SendMessage = 0;
-[e = _SendMessage -> -> 0 `i `uc ]
-"128
-[; ;main.c: 128:     Timer0_Init();
-[e ( _Timer0_Init ..  ]
+[; ;main.c: 126:     TRISAbits.TRISA0 = 0;
+[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+"127
+[; ;main.c: 127:     LATAbits.LATA0 = 0;
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 "129
-[; ;main.c: 129:     buttonInit();
-[e ( _buttonInit ..  ]
-"131
-[; ;main.c: 131:     Init_RTC_Interrupt_RC5();
-[e ( _Init_RTC_Interrupt_RC5 ..  ]
+[; ;main.c: 129:     LATDbits.LATD2 = 1;
+[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
+"130
+[; ;main.c: 130:     LATDbits.LATD3 = 1;
+[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
 "132
-[; ;main.c: 132:     DS3231_ClearAlarmFlag();
-[e ( _DS3231_ClearAlarmFlag ..  ]
+[; ;main.c: 132:     LoRaState = 0;
+[e = _LoRaState -> -> 0 `i `uc ]
 "133
-[; ;main.c: 133:     _delay((unsigned long)((50)*(64000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"135
-[; ;main.c: 135:     (INTCON0bits.GIE = 1);
-[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 133:     LoRaSeconds = 0;
+[e = _LoRaSeconds -> -> 0 `i `uc ]
+"134
+[; ;main.c: 134:     SendMessage = 0;
+[e = _SendMessage -> -> 0 `i `uc ]
+"136
+[; ;main.c: 136:     Timer0_Init();
+[e ( _Timer0_Init ..  ]
 "137
-[; ;main.c: 137:     while(1)
-[e :U 2264 ]
-"138
-[; ;main.c: 138:     {
-{
+[; ;main.c: 137:     buttonInit();
+[e ( _buttonInit ..  ]
+"139
+[; ;main.c: 139:     Init_RTC_Interrupt_RC5();
+[e ( _Init_RTC_Interrupt_RC5 ..  ]
 "140
-[; ;main.c: 140:         if(RTCReadFlag)
-[e $ ! != -> _RTCReadFlag `i -> 0 `i 2266  ]
+[; ;main.c: 140:     DS3231_ClearAlarmFlag();
+[e ( _DS3231_ClearAlarmFlag ..  ]
 "141
-[; ;main.c: 141:         {
-{
-"142
-[; ;main.c: 142:             RTCReadFlag = 0;
-[e = _RTCReadFlag -> -> 0 `i `uc ]
+[; ;main.c: 141:     _delay((unsigned long)((50)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "143
-[; ;main.c: 143:             RTC_UpdateTime();
+[; ;main.c: 143:     (INTCON0bits.GIE = 1);
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"145
+[; ;main.c: 145:     RTC_SetTime(0, 0, 0);
+[e ( _RTC_SetTime (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"147
+[; ;main.c: 147:     while(1)
+[e :U 2264 ]
+"148
+[; ;main.c: 148:     {
+{
+"151
+[; ;main.c: 151:         RTC_UpdateTime();
 [e ( _RTC_UpdateTime ..  ]
-"144
-[; ;main.c: 144:         }
+"159
+[; ;main.c: 159:         if(!loraminSet)
+[e $ ! ! != -> _loraminSet `i -> 0 `i 2266  ]
+"160
+[; ;main.c: 160:         {
+{
+"161
+[; ;main.c: 161:             loraStart = hour * 60 + min;
+[e = _loraStart + * -> _hour `i -> 60 `i -> _min `i ]
+"162
+[; ;main.c: 162:             loraminSet = 1;
+[e = _loraminSet -> -> 1 `i `a ]
+"163
+[; ;main.c: 163:         }
 }
 [e :U 2266 ]
-"146
-[; ;main.c: 146:         if(prevsec != sec){
-[e $ ! != -> _prevsec `i -> _sec `i 2267  ]
-{
-"147
-[; ;main.c: 147:             prevsec = sec;
-[e = _prevsec _sec ]
-"148
-[; ;main.c: 148:             printf("Time: %02u:%02u:%02u\r\n", hour, min, sec);
-[e ( _printf , , , (. :s 1C -> _hour `i -> _min `i -> _sec `i ]
-"149
-[; ;main.c: 149:         }
-}
-[e :U 2267 ]
 "165
-[; ;main.c: 165:         if(LoRaState == 0)
-[e $ ! == -> _LoRaState `i -> 0 `i 2268  ]
-"166
-[; ;main.c: 166:         {
-{
+[; ;main.c: 165:         currentTime = hour * 60 + min;
+[e = _currentTime + * -> _hour `i -> 60 `i -> _min `i ]
 "167
-[; ;main.c: 167:             if(LoRaSeconds >= 5)
-[e $ ! >= -> _LoRaSeconds `i -> 5 `i 2269  ]
+[; ;main.c: 167:         if(currentTime < loraStart)
+[e $ ! < _currentTime _loraStart 2267  ]
 "168
-[; ;main.c: 168:             {
+[; ;main.c: 168:         {
 {
 "169
-[; ;main.c: 169:                 SendMessage = 1;
-[e = _SendMessage -> -> 1 `i `uc ]
-"171
-[; ;main.c: 171:                 LoRaSeconds = 0;
-[e = _LoRaSeconds -> -> 0 `i `uc ]
-"173
-[; ;main.c: 173:                 LoRaState = 1;
-[e = _LoRaState -> -> 1 `i `uc ]
-"174
-[; ;main.c: 174:             }
+[; ;main.c: 169:             currentTime += 24 * 60;
+[e =+ _currentTime * -> 24 `i -> 60 `i ]
+"170
+[; ;main.c: 170:         }
 }
-[e :U 2269 ]
+[e :U 2267 ]
+"172
+[; ;main.c: 172:         if(currentTime - loraStart >= 1)
+[e $ ! >= - _currentTime _loraStart -> 1 `i 2268  ]
+"173
+[; ;main.c: 173:         {
+{
 "175
-[; ;main.c: 175:         }
+[; ;main.c: 175:             UART_SendString("hello");
+[e ( _UART_SendString (1 :s 1C ]
+"176
+[; ;main.c: 176:             loraStart = hour * 60 + min;
+[e = _loraStart + * -> _hour `i -> 60 `i -> _min `i ]
+"177
+[; ;main.c: 177:         }
 }
 [e :U 2268 ]
-"177
-[; ;main.c: 177:         if(LoRaState == 1)
-[e $ ! == -> _LoRaState `i -> 1 `i 2270  ]
-"178
-[; ;main.c: 178:         {
-{
-"179
-[; ;main.c: 179:             if(LoRaSeconds >= 20)
-[e $ ! >= -> _LoRaSeconds `i -> 20 `i 2271  ]
-"180
-[; ;main.c: 180:             {
-{
-"181
-[; ;main.c: 181:                 LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
 "183
-[; ;main.c: 183:                 LoRaSeconds = 0;
-[e = _LoRaSeconds -> -> 0 `i `uc ]
+[; ;main.c: 183:         if(prevsec != sec){
+[e $ ! != -> _prevsec `i -> _sec `i 2269  ]
+{
+"184
+[; ;main.c: 184:             prevsec = sec;
+[e = _prevsec _sec ]
 "185
-[; ;main.c: 185:                 LoRaState = 2;
-[e = _LoRaState -> -> 2 `i `uc ]
+[; ;main.c: 185:             printf("Time: %02u:%02u:%02u\r\n", hour, min, sec);
+[e ( _printf , , , (. :s 2C -> _hour `i -> _min `i -> _sec `i ]
 "186
-[; ;main.c: 186:             }
+[; ;main.c: 186:         }
 }
-[e :U 2271 ]
-"187
-[; ;main.c: 187:         }
+[e :U 2269 ]
+"188
+[; ;main.c: 188:         if(
+[e $ ! && || > -> _hour `i -> _sleepHour `i && == -> _hour `i -> _sleepHour `i >= -> _min `i -> _sleepMinute `i || < -> _hour `i -> _wakeHour `i && == -> _hour `i -> _wakeHour `i < -> _min `i -> _wakeMinute `i 2270  ]
+"193
+[; ;main.c: 193:         {
+{
+"194
+[; ;main.c: 194:             LATDbits.LATD2 = 0;
+[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
+"195
+[; ;main.c: 195:             printf("Sleeping");
+[e ( _printf :s 3C ]
+"196
+[; ;main.c: 196:             RTC_SleepUntil(wakeHour, wakeMinute, 0);
+[e ( _RTC_SleepUntil (3 , , _wakeHour _wakeMinute -> -> 0 `i `uc ]
+"197
+[; ;main.c: 197:             LATDbits.LATD2 = 1;
+[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
+"198
+[; ;main.c: 198:         }
 }
 [e :U 2270 ]
-"189
-[; ;main.c: 189:         if(LoRaState == 2)
-[e $ ! == -> _LoRaState `i -> 2 `i 2272  ]
-"190
-[; ;main.c: 190:         {
-{
-"191
-[; ;main.c: 191:             if(LoRaSeconds >= 60)
-[e $ ! >= -> _LoRaSeconds `i -> 60 `i 2273  ]
-"192
-[; ;main.c: 192:             {
-{
-"193
-[; ;main.c: 193:                 LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"195
-[; ;main.c: 195:                 LoRaSeconds = 0;
-[e = _LoRaSeconds -> -> 0 `i `uc ]
-"197
-[; ;main.c: 197:                 LoRaState = 0;
-[e = _LoRaState -> -> 0 `i `uc ]
-"198
-[; ;main.c: 198:             }
-}
-[e :U 2273 ]
-"199
-[; ;main.c: 199:         }
-}
-[e :U 2272 ]
-"201
-[; ;main.c: 201:         if(SendMessage)
-[e $ ! != -> _SendMessage `i -> 0 `i 2274  ]
-"202
-[; ;main.c: 202:         {
-{
-"203
-[; ;main.c: 203:             SendMessage = 0;
-[e = _SendMessage -> -> 0 `i `uc ]
-"205
-[; ;main.c: 205:             sprintf(
-[e ( _sprintf (1 , , , , , , (. , &U _buffer :s 2C _count _A _B _C _D _E ]
-"216
-[; ;main.c: 216:             UART_SendString(buffer);
-[e ( _UART_SendString (1 -> &U _buffer `*Cuc ]
-"217
-[; ;main.c: 217:         }
-}
-[e :U 2274 ]
-"224
-[; ;main.c: 224:         if(UART1_IsRxReady())
-[e $ ! != -> ( _UART1_IsRxReady ..  `i -> 0 `i 2275  ]
-"225
-[; ;main.c: 225:         {
-{
-"226
-[; ;main.c: 226:             char c = UART1_Read();
-[v _c `uc ~T0 @X0 1 a ]
-[e = _c -> ( _UART1_Read ..  `uc ]
-"228
-[; ;main.c: 228:             switch(state)
-[e $U 2277  ]
-"229
-[; ;main.c: 229:             {
-{
-"230
-[; ;main.c: 230:                 case 0:
-[e :U 2278 ]
-"232
-[; ;main.c: 232:                     if(c == 'L')
-[e $ ! == -> _c `ui -> 76 `ui 2279  ]
-"233
-[; ;main.c: 233:                         state = 1;
-[e = _state -> -> 1 `i `uc ]
-[e :U 2279 ]
-"235
-[; ;main.c: 235:                     break;
-[e $U 2276  ]
-"237
-[; ;main.c: 237:                 case 1:
-[e :U 2280 ]
-"239
-[; ;main.c: 239:                     if(c == 'E')
-[e $ ! == -> _c `ui -> 69 `ui 2281  ]
-"240
-[; ;main.c: 240:                         state = 2;
-[e = _state -> -> 2 `i `uc ]
-[e $U 2282  ]
-"242
-[; ;main.c: 242:                     else if(c == 'L')
-[e :U 2281 ]
-[e $ ! == -> _c `ui -> 76 `ui 2283  ]
-"243
-[; ;main.c: 243:                         state = 1;
-[e = _state -> -> 1 `i `uc ]
-[e $U 2284  ]
-"245
-[; ;main.c: 245:                     else
-[e :U 2283 ]
-"246
-[; ;main.c: 246:                         state = 0;
-[e = _state -> -> 0 `i `uc ]
-[e :U 2284 ]
-[e :U 2282 ]
-"248
-[; ;main.c: 248:                     break;
-[e $U 2276  ]
-"250
-[; ;main.c: 250:                 case 2:
-[e :U 2285 ]
-"252
-[; ;main.c: 252:                     if(c == 'D')
-[e $ ! == -> _c `ui -> 68 `ui 2286  ]
-"253
-[; ;main.c: 253:                     {
-{
-"256
-[; ;main.c: 256:                         count = 0;
-[e = _count -> 0 `i ]
-"258
-[; ;main.c: 258:                         A = 0;
-[e = _A -> 0 `i ]
-"259
-[; ;main.c: 259:                         B = 0;
-[e = _B -> 0 `i ]
-"260
-[; ;main.c: 260:                         C = 0;
-[e = _C -> 0 `i ]
-"261
-[; ;main.c: 261:                         D = 0;
-[e = _D -> 0 `i ]
-"262
-[; ;main.c: 262:                         E = 0;
-[e = _E -> 0 `i ]
-"266
-[; ;main.c: 266:                         IRWasHigh = 0;
-[e = _IRWasHigh -> 0 `i ]
-"267
-[; ;main.c: 267:                         PIR_Reset = 1;
-[e = _PIR_Reset -> 1 `i ]
-"268
-[; ;main.c: 268:                     }
-}
-[e :U 2286 ]
-"270
-[; ;main.c: 270:                     state = 0;
-[e = _state -> -> 0 `i `uc ]
-"272
-[; ;main.c: 272:                     break;
-[e $U 2276  ]
-"274
-[; ;main.c: 274:                 default:
-[e :U 2287 ]
-"276
-[; ;main.c: 276:                     state = 0;
-[e = _state -> -> 0 `i `uc ]
-"278
-[; ;main.c: 278:                     break;
-[e $U 2276  ]
-"279
-[; ;main.c: 279:             }
-}
-[e $U 2276  ]
-[e :U 2277 ]
-[e [\ _state , $ -> 0 `i 2278
- , $ -> 1 `i 2280
- , $ -> 2 `i 2285
- 2287 ]
-[e :U 2276 ]
-"280
-[; ;main.c: 280:         }
-}
-[e :U 2275 ]
-"286
-[; ;main.c: 286:         if(PIR_Reset == 1)
-[e $ ! == _PIR_Reset -> 1 `i 2288  ]
-"287
-[; ;main.c: 287:         {
-{
-"290
-[; ;main.c: 290:             LATAbits.LATA0 = 0;
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-"292
-[; ;main.c: 292:             if(PORTDbits.RD0 == 0)
-[e $ ! == -> . . _PORTDbits 0 0 `i -> 0 `i 2289  ]
-"293
-[; ;main.c: 293:             {
-{
-"294
-[; ;main.c: 294:                 PIR_Reset = 0;
-[e = _PIR_Reset -> 0 `i ]
-"295
-[; ;main.c: 295:                 IRWasHigh = 0;
-[e = _IRWasHigh -> 0 `i ]
-"296
-[; ;main.c: 296:             }
-}
-[e :U 2289 ]
-"297
-[; ;main.c: 297:         }
-}
-[e $U 2290  ]
-"298
-[; ;main.c: 298:         else
-[e :U 2288 ]
-"299
-[; ;main.c: 299:         {
-{
-"300
-[; ;main.c: 300:             if(PORTDbits.RD0 == 1)
-[e $ ! == -> . . _PORTDbits 0 0 `i -> 1 `i 2291  ]
-"301
-[; ;main.c: 301:             {
-{
-"302
-[; ;main.c: 302:                 LATAbits.LATA0 = 1;
-[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-"304
-[; ;main.c: 304:                 IRWasHigh = 1;
-[e = _IRWasHigh -> 1 `i ]
-"305
-[; ;main.c: 305:             }
-}
-[e $U 2292  ]
-"306
-[; ;main.c: 306:             else
-[e :U 2291 ]
-"307
-[; ;main.c: 307:             {
-{
-"308
-[; ;main.c: 308:                 LATAbits.LATA0 = 0;
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-"310
-[; ;main.c: 310:                 if(IRWasHigh == 1)
-[e $ ! == _IRWasHigh -> 1 `i 2293  ]
-"311
-[; ;main.c: 311:                 {
-{
-"312
-[; ;main.c: 312:                     count++;
-[e ++ _count -> 1 `i ]
-"314
-[; ;main.c: 314:                     IRWasHigh = 0;
-[e = _IRWasHigh -> 0 `i ]
-"315
-[; ;main.c: 315:                 }
-}
-[e :U 2293 ]
-"316
-[; ;main.c: 316:             }
-}
-[e :U 2292 ]
-"317
-[; ;main.c: 317:         }
-}
-[e :U 2290 ]
-"323
-[; ;main.c: 323:         buttonTask();
-[e ( _buttonTask ..  ]
-"324
-[; ;main.c: 324:     }
+"362
+[; ;main.c: 362:     }
 }
 [e :U 2263 ]
 [e $U 2264  ]
 [e :U 2265 ]
-"325
-[; ;main.c: 325: }
+"363
+[; ;main.c: 363: }
 [e :UE 2262 ]
 }
 [p f _printf 8422404 ]
-[p f _sprintf 8388736 ]
-[a 1C 84 105 109 101 58 32 37 48 50 117 58 37 48 50 117 58 37 48 50 117 13 10 0 ]
-[a 2C 71 97 116 101 95 48 49 44 37 100 44 37 100 44 37 100 44 37 100 44 37 100 44 37 100 13 10 0 ]
+[a 1C 104 101 108 108 111 0 ]
+[a 3C 83 108 101 101 112 105 110 103 0 ]
+[a 2C 84 105 109 101 58 32 37 48 50 117 58 37 48 50 117 58 37 48 50 117 13 10 0 ]

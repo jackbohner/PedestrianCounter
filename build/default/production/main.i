@@ -27643,13 +27643,21 @@ int main(void)
 
     uint16_t adc = 0;
 
-    uint8_t sleepHour = 21;
-    uint8_t sleepMinute = 0;
+    uint8_t sleepHour = 0;
+    uint8_t sleepMinute = 1;
 
-    uint8_t wakeHour = 7;
-    uint8_t wakeMinute = 0;
+    uint8_t wakeHour = 0;
+    uint8_t wakeMinute = 37;
 
     uint8_t prevsec = 255;
+    int loraStart;
+    int currentTime;
+    _Bool loraminSet = 0;
+
+    _Bool waiting5Sec = 0;
+    uint8_t startSec = 0;
+
+
 
     SYSTEM_Initialize();
     ADC_Init();
@@ -27687,178 +27695,60 @@ int main(void)
 
     (INTCON0bits.GIE = 1);
 
+    RTC_SetTime(0, 0, 0);
+
     while(1)
     {
 
-        if(RTCReadFlag)
+
+        RTC_UpdateTime();
+
+
+
+
+
+
+
+        if(!loraminSet)
         {
-            RTCReadFlag = 0;
-            RTC_UpdateTime();
+            loraStart = hour * 60 + min;
+            loraminSet = 1;
         }
+
+        currentTime = hour * 60 + min;
+
+        if(currentTime < loraStart)
+        {
+            currentTime += 24 * 60;
+        }
+
+        if(currentTime - loraStart >= 1)
+        {
+
+            UART_SendString("hello");
+            loraStart = hour * 60 + min;
+        }
+
+
+
+
 
         if(prevsec != sec){
             prevsec = sec;
             printf("Time: %02u:%02u:%02u\r\n", hour, min, sec);
         }
-# 165 "main.c"
-        if(LoRaState == 0)
+
+        if(
+            (hour > sleepHour || (hour == sleepHour && min >= sleepMinute))
+            &&
+            (hour < wakeHour || (hour == wakeHour && min < wakeMinute))
+        )
         {
-            if(LoRaSeconds >= 5)
-            {
-                SendMessage = 1;
-
-                LoRaSeconds = 0;
-
-                LoRaState = 1;
-            }
+            LATDbits.LATD2 = 0;
+            printf("Sleeping");
+            RTC_SleepUntil(wakeHour, wakeMinute, 0);
+            LATDbits.LATD2 = 1;
         }
-
-        if(LoRaState == 1)
-        {
-            if(LoRaSeconds >= 20)
-            {
-                LATDbits.LATD2 = 0;
-
-                LoRaSeconds = 0;
-
-                LoRaState = 2;
-            }
-        }
-
-        if(LoRaState == 2)
-        {
-            if(LoRaSeconds >= 60)
-            {
-                LATDbits.LATD2 = 1;
-
-                LoRaSeconds = 0;
-
-                LoRaState = 0;
-            }
-        }
-
-        if(SendMessage)
-        {
-            SendMessage = 0;
-
-            sprintf(
-                buffer,
-                "Gate_01,%d,%d,%d,%d,%d,%d\r\n",
-                count,
-                A,
-                B,
-                C,
-                D,
-                E
-            );
-
-            UART_SendString(buffer);
-        }
-
-
-
-
-
-
-        if(UART1_IsRxReady())
-        {
-            char c = UART1_Read();
-
-            switch(state)
-            {
-                case 0:
-
-                    if(c == 'L')
-                        state = 1;
-
-                    break;
-
-                case 1:
-
-                    if(c == 'E')
-                        state = 2;
-
-                    else if(c == 'L')
-                        state = 1;
-
-                    else
-                        state = 0;
-
-                    break;
-
-                case 2:
-
-                    if(c == 'D')
-                    {
-
-
-                        count = 0;
-
-                        A = 0;
-                        B = 0;
-                        C = 0;
-                        D = 0;
-                        E = 0;
-
-
-
-                        IRWasHigh = 0;
-                        PIR_Reset = 1;
-                    }
-
-                    state = 0;
-
-                    break;
-
-                default:
-
-                    state = 0;
-
-                    break;
-            }
-        }
-
-
-
-
-
-        if(PIR_Reset == 1)
-        {
-
-
-            LATAbits.LATA0 = 0;
-
-            if(PORTDbits.RD0 == 0)
-            {
-                PIR_Reset = 0;
-                IRWasHigh = 0;
-            }
-        }
-        else
-        {
-            if(PORTDbits.RD0 == 1)
-            {
-                LATAbits.LATA0 = 1;
-
-                IRWasHigh = 1;
-            }
-            else
-            {
-                LATAbits.LATA0 = 0;
-
-                if(IRWasHigh == 1)
-                {
-                    count++;
-
-                    IRWasHigh = 0;
-                }
-            }
-        }
-
-
-
-
-
-        buttonTask();
+# 362 "main.c"
     }
 }
